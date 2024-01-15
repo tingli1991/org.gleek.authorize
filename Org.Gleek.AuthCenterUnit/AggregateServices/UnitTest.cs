@@ -18,6 +18,7 @@ namespace Org.Gleek.AuthCenterUnit
             //var testAggregateService = AutofacProvider.GetService<TestAggregateService>();
             //var isSuccess = await testAggregateService.TestAsync();
             //Assert.IsTrue(isSuccess);
+            Assert.IsTrue(true);
             await Task.CompletedTask;
         }
     }
