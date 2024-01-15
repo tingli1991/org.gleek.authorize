@@ -4,16 +4,5 @@
         <name>Org.Gleek.AuthCenter.AggregateService</name>
     </assembly>
     <members>
-        <member name="T:Org.Gleek.AuthCenter.AggregateService.TestAggregateService">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Org.Gleek.AuthCenter.AggregateService.TestAggregateService.TestAsync">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
     </members>
 </doc>
