@@ -4,6 +4,22 @@
         <name>Org.Gleek.AuthCenter</name>
     </assembly>
     <members>
+        <member name="T:Org.Gleek.AuthCenter.Controllers.WeatherForecastController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthCenter.Controllers.WeatherForecastController.Summaries">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.AuthCenter.Controllers.WeatherForecastController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Com.GleekFramework.AppSvc.Program">
             <summary>
             应用程序

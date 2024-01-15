@@ -17,20 +17,6 @@ namespace Org.Gleek.AuthCenter.Controllers
         /// <summary>
         /// 
         /// </summary>
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="logger"></param>
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         /// <returns></returns>
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<object> Get()

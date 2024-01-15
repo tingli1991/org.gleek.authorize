@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <Description>版本升级</Description>
     <ImplicitUsings>enable</ImplicitUsings>
     <TargetFramework>net6.0</TargetFramework>
