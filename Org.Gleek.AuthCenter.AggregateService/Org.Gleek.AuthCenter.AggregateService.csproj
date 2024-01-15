@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net6.0</TargetFramework>
+    <DocumentationFile>Org.Gleek.AuthCenter.AggregateService.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Org.Gleek.AuthCenter.Service\Org.Gleek.AuthCenter.Service.csproj" />
+  </ItemGroup>
+
+</Project>

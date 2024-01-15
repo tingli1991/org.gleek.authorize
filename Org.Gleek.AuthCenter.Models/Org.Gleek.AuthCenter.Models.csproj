@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <Description>数据模型</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net6.0</TargetFramework>
+    <DocumentationFile>Org.Gleek.AuthCenter.Models.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Com.GleekFramework.HttpSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.KafkaSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.NacosSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.QueueSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.DapperSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.ConfigSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.SwaggerSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.AssemblySdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.ContractSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.RabbitMQSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.AttributeSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.MigrationSdk" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Org.Gleek.AuthCenter.Entitys\Org.Gleek.AuthCenter.Entitys.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\" />
+    <Folder Include="Params\" />
+    <Folder Include="Requsts\" />
+    <Folder Include="Responses\" />
+    <Folder Include="Events\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>
