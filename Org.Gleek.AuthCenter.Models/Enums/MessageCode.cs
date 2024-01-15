@@ -6,7 +6,7 @@ namespace Org.Gleek.AuthCenter.Models
     /// 错误信息枚举
     /// </summary>
     [Serializable]
-    public enum MessageCodeEnum
+    public enum MessageCode
     {
         /// <summary>
         /// 请输入时间

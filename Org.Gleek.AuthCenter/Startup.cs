@@ -24,7 +24,7 @@ namespace Com.GleekFramework.AppSvc
             services.AddNewtonsoftJson();//添加对JSON的默认格式化
             services.AddDistributedMemoryCache();//添加分布式内存缓存
             services.AddGlobalExceptionAttribute();//添加全局异常
-            services.AddModelValidAttribute<MessageCodeEnum>();//添加模型验证
+            services.AddModelValidAttribute<MessageCode>();//添加模型验证
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();//添加Cookie支持
         }
 
