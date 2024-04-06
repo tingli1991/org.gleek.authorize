@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Org.Gleek.Authorize</name>
+    </assembly>
+    <members>
+        <member name="T:Org.Gleek.Authorize.Controllers.WeatherForecastController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.Authorize.Controllers.WeatherForecastController.Summaries">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.Authorize.Controllers.WeatherForecastController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.GleekFramework.AppSvc.Program">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="M:Com.GleekFramework.AppSvc.Program.Main(System.String[])">
+            <summary>
+            主函数
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Com.GleekFramework.AppSvc.Program.CreateDefaultHostBuilder(System.String[])">
+            <summary>
+            创建默认的主机
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.GleekFramework.AppSvc.Startup">
+            <summary>
+            程序激动类
+            </summary>
+        </member>
+        <member name="M:Com.GleekFramework.AppSvc.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            服务注册
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Com.GleekFramework.AppSvc.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            配置服务
+            </summary>
+            <param name="app"></param>
+        </member>
+    </members>
+</doc>

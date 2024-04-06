@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.8" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Org.Gleek.Authorize.AggregateService\Org.Gleek.Authorize.AggregateService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MigrationServices\" />
+  </ItemGroup>
+
+</Project>

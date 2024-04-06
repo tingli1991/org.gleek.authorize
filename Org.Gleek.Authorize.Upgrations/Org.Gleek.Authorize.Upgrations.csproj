@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Nullable>disable</Nullable>
+    <Description>版本升级</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net6.0</TargetFramework>
+    <DocumentationFile>Org.Gleek.Authorize.Upgrations.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Org.Gleek.Authorize.AggregateService\Org.Gleek.Authorize.AggregateService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>
