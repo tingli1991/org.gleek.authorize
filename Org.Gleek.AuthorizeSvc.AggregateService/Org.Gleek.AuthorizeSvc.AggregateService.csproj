@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net8.0</TargetFramework>
+    <DocumentationFile>Org.Gleek.AuthorizeSvc.AggregateService.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Org.Gleek.AuthorizeSvc.Service\Org.Gleek.AuthorizeSvc.Service.csproj" />
+  </ItemGroup>
+
+</Project>

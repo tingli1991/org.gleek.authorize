@@ -3,29 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.Authorize", "Org.Gleek.Authorize\Org.Gleek.Authorize.csproj", "{C7AF0D86-ABAC-4123-B636-0E784EA0C34A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Org.Gleek.AuthorizeSvc.Contracts", "00.Org.Gleek.AuthorizeSvc.Contracts", "{A3EDBF51-ACB1-4B35-9D0C-ADA067118095}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Org.Gleek.Authorize.Contracts", "00.Org.Gleek.Authorize.Contracts", "{A3EDBF51-ACB1-4B35-9D0C-ADA067118095}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Org.Gleek.AuthorizeSvc.Repository", "01.Org.Gleek.AuthorizeSvc.Repository", "{FF35CCCC-CF0F-4E63-A134-98C6FB5D318B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Org.Gleek.Authorize.Repository", "01.Org.Gleek.Authorize.Repository", "{FF35CCCC-CF0F-4E63-A134-98C6FB5D318B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Org.Gleek.AuthorizeSvc.Service", "02.Org.Gleek.AuthorizeSvc.Service", "{1132104D-D448-4D8E-9ADA-5E91A73AEC3C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Org.Gleek.Authorize.Service", "02.Org.Gleek.Authorize.Service", "{1132104D-D448-4D8E-9ADA-5E91A73AEC3C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Org.Gleek.AuthorizeSvc.AggregateService", "03.Org.Gleek.AuthorizeSvc.AggregateService", "{3D5B3F56-3D12-4CDB-9AAF-A9C4C9565751}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Org.Gleek.Authorize.AggregateService", "03.Org.Gleek.Authorize.AggregateService", "{3D5B3F56-3D12-4CDB-9AAF-A9C4C9565751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeSvc.Models", "Org.Gleek.AuthorizeSvc.Models\Org.Gleek.AuthorizeSvc.Models.csproj", "{F5E09C99-8304-41C5-A559-D85B3486B9A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.Authorize.Models", "Org.Gleek.Authorize.Models\Org.Gleek.Authorize.Models.csproj", "{F5E09C99-8304-41C5-A559-D85B3486B9A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeSvc.Repository", "Org.Gleek.AuthorizeSvc.Repository\Org.Gleek.AuthorizeSvc.Repository.csproj", "{CADBE071-8514-497D-8C7B-005AB15E21EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.Authorize.Repository", "Org.Gleek.Authorize.Repository\Org.Gleek.Authorize.Repository.csproj", "{CADBE071-8514-497D-8C7B-005AB15E21EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeSvc.Service", "Org.Gleek.AuthorizeSvc.Service\Org.Gleek.AuthorizeSvc.Service.csproj", "{E0829395-7A70-4E38-B9FF-048E86539746}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.Authorize.Service", "Org.Gleek.Authorize.Service\Org.Gleek.Authorize.Service.csproj", "{E0829395-7A70-4E38-B9FF-048E86539746}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeSvc.AggregateService", "Org.Gleek.AuthorizeSvc.AggregateService\Org.Gleek.AuthorizeSvc.AggregateService.csproj", "{B9483138-F348-42DD-BE06-B706A3DE5525}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.Authorize.AggregateService", "Org.Gleek.Authorize.AggregateService\Org.Gleek.Authorize.AggregateService.csproj", "{B9483138-F348-42DD-BE06-B706A3DE5525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeSvc.Entitys", "Org.Gleek.AuthorizeSvc.Entitys\Org.Gleek.AuthorizeSvc.Entitys.csproj", "{C777CFA0-38CA-404A-9C5D-765F7B2AB8CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.Authorize.Entitys", "Org.Gleek.Authorize.Entitys\Org.Gleek.Authorize.Entitys.csproj", "{C777CFA0-38CA-404A-9C5D-765F7B2AB8CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeSvc.Upgrations", "Org.Gleek.AuthorizeSvc.Upgrations\Org.Gleek.AuthorizeSvc.Upgrations.csproj", "{1B9AB7ED-7956-456A-A049-61BCA310F3A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeUnit", "Org.Gleek.AuthorizeUnit\Org.Gleek.AuthorizeUnit.csproj", "{D8C632C8-6D94-4CC7-9D3F-EB15202C89FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeSvc", "Org.Gleek.AuthorizeSvc\Org.Gleek.AuthorizeSvc.csproj", "{DD9AA1AE-38C7-4418-BAF8-FF5697D70607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Org.Gleek.Authorize.Upgrations", "Org.Gleek.Authorize.Upgrations\Org.Gleek.Authorize.Upgrations.csproj", "{1B9AB7ED-7956-456A-A049-61BCA310F3A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.Gleek.AuthorizeSvc.Tests", "Org.Gleek.AuthorizeSvc.Tests\Org.Gleek.AuthorizeSvc.Tests.csproj", "{FD39B05C-AE0A-4177-8653-C0258644CC49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C7AF0D86-ABAC-4123-B636-0E784EA0C34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7AF0D86-ABAC-4123-B636-0E784EA0C34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7AF0D86-ABAC-4123-B636-0E784EA0C34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7AF0D86-ABAC-4123-B636-0E784EA0C34A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5E09C99-8304-41C5-A559-D85B3486B9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5E09C99-8304-41C5-A559-D85B3486B9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5E09C99-8304-41C5-A559-D85B3486B9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,14 +53,18 @@ Global
 		{C777CFA0-38CA-404A-9C5D-765F7B2AB8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C777CFA0-38CA-404A-9C5D-765F7B2AB8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C777CFA0-38CA-404A-9C5D-765F7B2AB8CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8C632C8-6D94-4CC7-9D3F-EB15202C89FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8C632C8-6D94-4CC7-9D3F-EB15202C89FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8C632C8-6D94-4CC7-9D3F-EB15202C89FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8C632C8-6D94-4CC7-9D3F-EB15202C89FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B9AB7ED-7956-456A-A049-61BCA310F3A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B9AB7ED-7956-456A-A049-61BCA310F3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B9AB7ED-7956-456A-A049-61BCA310F3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B9AB7ED-7956-456A-A049-61BCA310F3A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9AA1AE-38C7-4418-BAF8-FF5697D70607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9AA1AE-38C7-4418-BAF8-FF5697D70607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9AA1AE-38C7-4418-BAF8-FF5697D70607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9AA1AE-38C7-4418-BAF8-FF5697D70607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD39B05C-AE0A-4177-8653-C0258644CC49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD39B05C-AE0A-4177-8653-C0258644CC49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD39B05C-AE0A-4177-8653-C0258644CC49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD39B05C-AE0A-4177-8653-C0258644CC49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Nullable>disable</Nullable>
+    <Description>数据库</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net8.0</TargetFramework>
+    <DocumentationFile>Org.Gleek.AuthorizeSvc.Entitys.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Com.GleekFramework.ConfigSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.ContractSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.MigrationSdk" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

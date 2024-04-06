@@ -1,0 +1,26 @@
+{
+  "Switch": true,
+  "UserName": "nacos",
+  "ListenInterval": 15000,
+  "GroupName": "org-gleek",
+  "Password": "ChinaNet910111",
+  "NamespaceId": "bc8b30e8-5bd4-42b2-9099-82031950928a",
+  "ServerAddresses": [
+    "http://192.168.100.25:8848/"
+  ],
+  "ConfigSettings": {
+    "RelativePath": true,
+    "ConfigPath": "Config",
+    "ConfitOptions": [
+      {
+        "NamespaceId": "public",
+        "ConfigName": "share.json",
+        "DataId": "org-gleek-share.json"
+      },
+      {
+        "ConfigName": "application.json",
+        "DataId": "org-gleek-authorize-application.json"
+      }
+    ]
+  }
+}

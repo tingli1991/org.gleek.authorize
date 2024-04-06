@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Nullable>disable</Nullable>
+    <Description>版本升级</Description>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net8.0</TargetFramework>
+    <DocumentationFile>Org.Gleek.AuthorizeSvc.Upgrations.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Org.Gleek.AuthorizeSvc.AggregateService\Org.Gleek.AuthorizeSvc.AggregateService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,4 @@
-# Org.Gleek.Authorize
+# Org.Gleek.AuthorizeSvc
 
 ## Getting started
 
@@ -13,14 +13,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin http://192.168.1.20/com/net/Org.Gleek.Authorize.git
+git remote add origin http://192.168.1.20/com/net/Org.Gleek.AuthorizeSvc.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](http://192.168.1.20/com/net/Org.Gleek.Authorize/-/settings/integrations)
+- [ ] [Set up project integrations](http://192.168.1.20/com/net/Org.Gleek.AuthorizeSvc/-/settings/integrations)
 
 ## Collaborate with your team
 

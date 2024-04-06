@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Org.Gleek.AuthorizeSvc.Entitys</name>
+    </assembly>
+    <members>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus">
+            <summary>
+            启用状态
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus.Enable">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus.Disable">
+            <summary>
+            禁用
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.Gender.Man">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.Gender.WoMan">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.Gender.Other">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Permission">
+            <summary>
+            权限表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Role">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.RolePermission">
+            <summary>
+            角色权限对应表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.RoleId">
+            <summary>
+            角色Id
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.PermissionId">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.BusinessCard">
+            <summary>
+            个人名片
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Signature">
+            <summary>
+            个性签名
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.RegisterTime">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.BirthdayTime">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.LastLoginTime">
+            <summary>
+            最近登录时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.LastLogoutTime">
+            <summary>
+            最近登出时间
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserRole">
+            <summary>
+            用户角色对应表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.RoleId">
+            <summary>
+            角色Id
+            </summary>
+        </member>
+    </members>
+</doc>
