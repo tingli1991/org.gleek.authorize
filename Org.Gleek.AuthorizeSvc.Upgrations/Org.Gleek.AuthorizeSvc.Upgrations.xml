@@ -4,5 +4,27 @@
         <name>Org.Gleek.AuthorizeSvc.Upgrations</name>
     </assembly>
     <members>
+        <member name="T:Org.Gleek.AuthorizeSvc.Upgrations.ComAreaUpgration">
+            <summary>
+            地区编码升级脚本
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Upgrations.ComAreaUpgration.ExecuteSqlFilesAsync">
+            <summary>
+            执行sql文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Upgrations.ComIndustryUpgration">
+            <summary>
+            所属行业升级脚本
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Upgrations.ComIndustryUpgration.ExecuteSqlFilesAsync">
+            <summary>
+            执行sql文件
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

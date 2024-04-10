@@ -15,17 +15,17 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Org.Gleek.AuthorizeSvc.Tests.BaseUnitTest">
+        <member name="T:Org.Gleek.AuthorizeSvc.Tests.BaseTest">
             <summary>
             基础单元测试类
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Tests.BaseUnitTest.#cctor">
+        <member name="M:Org.Gleek.AuthorizeSvc.Tests.BaseTest.#cctor">
             <summary>
             静态构造函数
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Tests.BaseUnitTest.CreateDefaultHostBuilder">
+        <member name="M:Org.Gleek.AuthorizeSvc.Tests.BaseTest.CreateDefaultHostBuilder">
             <summary>
             创建默认的主机
             </summary>

@@ -7,10 +7,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <DocumentationFile>Org.Gleek.AuthorizeSvc.Entitys.xml</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Com.GleekFramework.ConfigSdk" Version="1.0.0" />

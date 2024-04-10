@@ -13,7 +13,6 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// </summary>
     [Table("user")]
     [Comment("用户表")]
-    [Index("idx_user_email", nameof(Email))]
     [Index("idx_user_user_name", nameof(UserName))]
     public class User : VersionTable
     {
@@ -34,15 +33,6 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         [Column("password")]
         [JsonProperty("password"), JsonPropertyName("password")]
         public string Password { get; set; }
-
-        /// <summary>
-        /// 邮箱
-        /// </summary>
-        [MaxLength(100)]
-        [Comment("邮箱")]
-        [Column("email")]
-        [JsonProperty("email"), JsonPropertyName("email")]
-        public string Email { get; set; }
 
         /// <summary>
         /// 昵称
@@ -99,20 +89,20 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         public string Signature { get; set; }
 
         /// <summary>
+        /// 是否是超级管理员
+        /// </summary>
+        [Comment("是否是超级管理员")]
+        [Column("is_admin")]
+        [JsonProperty("is_admin"), JsonPropertyName("is_admin")]
+        public int IsAdmin { get; set; }
+
+        /// <summary>
         /// 注册时间
         /// </summary>
         [Comment("注册时间")]
         [Column("register_time", TypeName = "datetime")]
         [JsonProperty("register_time"), JsonPropertyName("register_time")]
         public DateTime RegisterTime { get; set; }
-
-        /// <summary>
-        /// 生日
-        /// </summary>
-        [Comment("生日")]
-        [Column("birthday_time", TypeName = "datetime")]
-        [JsonProperty("birthday_time"), JsonPropertyName("birthday_time")]
-        public DateTime BirthdayTime { get; set; }
 
         /// <summary>
         /// 最近登录时间

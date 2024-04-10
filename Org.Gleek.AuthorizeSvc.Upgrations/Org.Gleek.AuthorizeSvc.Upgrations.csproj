@@ -13,9 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Scripts\" />
     <Folder Include="Constants\" />
-    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Scripts\com_industry.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Scripts\com_area.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

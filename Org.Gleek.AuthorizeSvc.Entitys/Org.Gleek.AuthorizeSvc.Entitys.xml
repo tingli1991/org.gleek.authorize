@@ -4,6 +4,91 @@
         <name>Org.Gleek.AuthorizeSvc.Entitys</name>
     </assembly>
     <members>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.ComArea">
+            <summary>
+            地区信息表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Name">
+            <summary>
+            地区名称
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Level">
+            <summary>
+            地区级别
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Lng">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Lat">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry">
+            <summary>
+            所属行业信息表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.AreaLevel">
+            <summary>
+            地区级别
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.AreaLevel.Province">
+            <summary>
+            省份
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.AreaLevel.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.AreaLevel.District">
+            <summary>
+            区县
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.AreaLevel.Street">
+            <summary>
+            城镇/街道
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus">
             <summary>
             启用状态
@@ -39,6 +124,81 @@
             其他
             </summary>
         </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Menu">
+            <summary>
+            菜单表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Order">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Icon">
+            <summary>
+            ICON图标
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Path">
+            <summary>
+            资源路径
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.ParentPath">
+            <summary>
+            父级路径
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission">
+            <summary>
+            菜单权限关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.MenuId">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.PermissionId">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Operation">
+            <summary>
+            操作表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Permission">
             <summary>
             权限表
@@ -52,6 +212,21 @@
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.Status">
             <summary>
             状态
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation">
+            <summary>
+            权限操作关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.PermissionId">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.OperationId">
+            <summary>
+            操作
             </summary>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Role">
@@ -71,7 +246,7 @@
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.RolePermission">
             <summary>
-            角色权限对应表
+            角色权限关联表
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.RoleId">
@@ -97,11 +272,6 @@
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Password">
             <summary>
             密码
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Email">
-            <summary>
-            邮箱
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.NickName">
@@ -134,14 +304,14 @@
             个性签名
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.IsAdmin">
+            <summary>
+            是否是超级管理员
+            </summary>
+        </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.RegisterTime">
             <summary>
             注册时间
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.BirthdayTime">
-            <summary>
-            生日
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.LastLoginTime">
@@ -154,9 +324,64 @@
             最近登出时间
             </summary>
         </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserGroup">
+            <summary>
+            用户组
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.ParentPath">
+            <summary>
+            父级路径
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole">
+            <summary>
+            用户组角色关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.UserGroupId">
+            <summary>
+            用户组
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.RoleId">
+            <summary>
+            角色Id
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser">
+            <summary>
+            用户组用户关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.UserGroupId">
+            <summary>
+            用户组
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.UserId">
+            <summary>
+            用户
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserRole">
             <summary>
-            用户角色对应表
+            用户角色关联表
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.UserId">

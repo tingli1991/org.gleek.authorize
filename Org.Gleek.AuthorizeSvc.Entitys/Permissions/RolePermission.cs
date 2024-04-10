@@ -7,10 +7,12 @@ using System.Text.Json.Serialization;
 namespace Org.Gleek.AuthorizeSvc.Entitys
 {
     /// <summary>
-    /// 角色权限对应表
+    /// 角色权限关联表
     /// </summary>
     [Table("role_permission")]
-    [Comment("角色权限对应表")]
+    [Comment("角色权限关联表")]
+    [Index("idx_role_permission_role_id", nameof(RoleId))]
+    [Index("idx_role_permission_permission_id", nameof(PermissionId))]
     public class RolePermission : VersionTable
     {
         /// <summary>
