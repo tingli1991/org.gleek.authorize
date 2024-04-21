@@ -4,20 +4,27 @@
         <name>Org.Gleek.AuthorizeSvc</name>
     </assembly>
     <members>
-        <member name="T:Org.Gleek.AuthorizeSvc.Controllers.WeatherForecastController">
+        <member name="T:Org.Gleek.AuthorizeSvc.Controllers.UserController">
             <summary>
-            
+            用户控制器
             </summary>
         </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Controllers.WeatherForecastController.Summaries">
+        <member name="P:Org.Gleek.AuthorizeSvc.Controllers.UserController.UserAggregateService">
             <summary>
-            
+            用户聚合服务
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.WeatherForecastController.Get">
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.UserController.LoginAsync(Org.Gleek.AuthorizeSvc.Models.Params.LoginParam)">
             <summary>
-            
+            登录
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.UserController.ValidateTokenAsync(System.String)">
+            <summary>
+            验证Token信息
+            </summary>
+            <param name="token">token</param>
             <returns></returns>
         </member>
         <member name="T:Com.GleekFramework.AppSvc.Program">

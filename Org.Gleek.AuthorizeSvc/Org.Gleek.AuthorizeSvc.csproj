@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\" />
+    <Folder Include="Handlers\Business\Permissions\" />
+    <Folder Include="Handlers\Events\Permissions\" />
   </ItemGroup>
 
   <ItemGroup>

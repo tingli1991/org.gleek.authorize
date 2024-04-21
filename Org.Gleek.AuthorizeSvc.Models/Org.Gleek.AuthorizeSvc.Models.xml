@@ -39,9 +39,94 @@
             错误信息枚举
             </summary>
         </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.PARAM_REQUIRED_DATE">
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.UNKNOWN_USER">
             <summary>
-            请输入时间
+            未知的用户
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.USER_NAME_OR_PASSWORD_REQUIRED">
+            <summary>
+            请输入用户名
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.USER_NAME_OR_PASSWORD_ERROR">
+            <summary>
+            用户名密码错误
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.TOKEN_INVALID">
+            <summary>
+            TOKEN无效
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel">
+            <summary>
+            用户授权模型
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.BusinessCard">
+            <summary>
+            个人名片
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.IsAdmin">
+            <summary>
+            是否是超级管理员
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.RegisterTime">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.LastLoginTime">
+            <summary>
+            最近登录时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.LastLogoutTime">
+            <summary>
+            最近登出时间
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Models.Params.LoginParam">
+            <summary>
+            登录请求参数
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.Params.LoginParam.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.Params.LoginParam.Password">
+            <summary>
+            密码
             </summary>
         </member>
     </members>
