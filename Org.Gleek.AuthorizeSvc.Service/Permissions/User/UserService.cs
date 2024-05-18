@@ -1,5 +1,5 @@
 ﻿using Com.GleekFramework.CommonSdk;
-using Com.GleekFramework.ContractSdk;
+using Com.GleekFramework.RedisSdk;
 using Org.Gleek.AuthorizeSvc.Entitys;
 using Org.Gleek.AuthorizeSvc.Models;
 using Org.Gleek.AuthorizeSvc.Repository;
@@ -17,48 +17,54 @@ namespace Org.Gleek.AuthorizeSvc.Service
         public UserRepository UserRepository { get; set; }
 
         /// <summary>
-        /// Token服务
+        /// Redis字符串仓储类
         /// </summary>
-        public JwtTokenService JwtTokenService { get; set; }
+        public RedisStringRepository RedisStringRepository { get; set; }
 
         /// <summary>
-        /// 验证Token信息
+        /// 获取用户信息
         /// </summary>
-        /// <param name="token">token</param>
+        /// <param name="userName">用户名称</param>
         /// <returns></returns>
-        public async Task<ContractResult<JwtTokenModel>> ValidateTokenAsync(string token)
+        public async Task<User> GetUserAsync(string userName)
         {
-            return await JwtTokenService.ValidateTokenAsync(token);
+            return await UserRepository.GetUserAsync(userName);
         }
 
         /// <summary>
-        /// 登录
+        /// 获取登录授权参数
         /// </summary>
-        /// <param name="userName">用户名</param>
-        /// <param name="password">登录密码</param>
+        /// <param name="userId">用户Id</param>
         /// <returns></returns>
-        public async Task<ContractResult<string>> LoginAsync(string userName, string password)
+        public async Task<UserAuthModel> GetUserAuthAsync(long userId)
         {
-            var result = new ContractResult<string>();
-            if (userName.IsNullOrEmpty() || password.IsNullOrEmpty())
-            {
-                return result.SetError(MessageCode.USER_NAME_OR_PASSWORD_REQUIRED);
-            }
+            var userInfo = await GetUserAsync(userId);
+            return userInfo.Map<User, UserAuthModel>();
+        }
 
-            var userInfo = await UserRepository.GetUserAsync(userName);
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="userId">用户名称</param>
+        /// <returns></returns>
+        public async Task<User> GetUserAsync(long userId)
+        {
+            var cacheKey = RedisCacheConstant.GetUserCacheKey(userId);
+            var userInfo = await RedisStringRepository.GetAsync<User>(cacheKey);
             if (userInfo == null)
             {
-                return result.SetError(MessageCode.UNKNOWN_USER);
+                userInfo = await UserRepository.GetUserAsync(userId);//获取用户信息
+                var expireSeconds = RedisStringRepository.GetExpireSeconds(3600 * 24 * 3, 3600 * 24 * 7);//缓存过期时间
+                await RedisStringRepository.SetAsync(cacheKey, userInfo ?? new User(), expireSeconds);//设置缓存
             }
-
-            if (!userInfo.Password.Equals(password))
+            else
             {
-                return result.SetError(MessageCode.USER_NAME_OR_PASSWORD_ERROR);
+                if (userInfo.Id <= 0)
+                {
+                    return null;
+                }
             }
-
-            var jwtTokenInfo = userInfo.Map<User, JwtTokenModel>();
-            var token = await JwtTokenService.GenerateTokenAsync(jwtTokenInfo);
-            return result.SetSuceccful(token);
+            return userInfo;
         }
     }
 }

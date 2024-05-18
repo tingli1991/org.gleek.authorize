@@ -4,6 +4,59 @@
         <name>Org.Gleek.AuthorizeSvc</name>
     </assembly>
     <members>
+        <member name="T:Org.Gleek.AuthorizeSvc.Controllers.AuthController">
+            <summary>
+            授权控制器
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Controllers.AuthController.UserAggregateService">
+            <summary>
+            用户聚合服务
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Controllers.AuthController.AuthAggregateService">
+            <summary>
+            授权聚合服务
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.ValidateTokenAsync(Org.Gleek.AuthorizeSvc.Models.Params.ValidateTokenParam)">
+            <summary>
+            验证TOKEN
+            </summary>
+            <param name="param">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.RefreshTokenAsync(Org.Gleek.AuthorizeSvc.Models.Models.RefreshTokenParam)">
+            <summary>
+            刷新TOKEN
+            </summary>
+            <param name="param">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.GetUserAuthAsync(System.Int64)">
+            <summary>
+            获取登录授权信息
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Controllers.LoginController">
+            <summary>
+            登录控制器
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Controllers.LoginController.LoginAggregateService">
+            <summary>
+            登录聚合服务
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.LoginController.LoginAsync(Org.Gleek.AuthorizeSvc.Models.Params.LoginParam)">
+            <summary>
+            登录
+            </summary>
+            <param name="param">请求参数</param>
+            <returns></returns>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Controllers.UserController">
             <summary>
             用户控制器
@@ -14,17 +67,11 @@
             用户聚合服务
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.UserController.LoginAsync(Org.Gleek.AuthorizeSvc.Models.Params.LoginParam)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.UserController.GetUserAsync(System.Int64)">
             <summary>
-            登录
+            获取用户详情
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.UserController.ValidateTokenAsync(System.String)">
-            <summary>
-            验证Token信息
-            </summary>
-            <param name="token">token</param>
+            <param name="userId">用户名称</param>
             <returns></returns>
         </member>
         <member name="T:Com.GleekFramework.AppSvc.Program">

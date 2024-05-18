@@ -34,6 +34,23 @@
             认证授权服务只读库配置
             </summary>
         </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant">
+            <summary>
+            Redis缓存常量
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetUserCacheKey(System.Int64)">
+            <summary>
+            获取用户信息缓存键
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetUserIdKey(System.String)">
+            <summary>
+            获取用户Id缓存键
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Models.MessageCode">
             <summary>
             错误信息枚举
@@ -59,59 +76,114 @@
             TOKEN无效
             </summary>
         </member>
-        <member name="T:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel">
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.TOKEN_REQUIRED">
+            <summary>
+            请输入TOKEN
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.REFRESH_TOKEN_REQUIRED">
+            <summary>
+            请输入REFRESH_TOKEN
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Models.UserAuthModel">
             <summary>
             用户授权模型
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.Id">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.Id">
             <summary>
             主键
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.UserName">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.UserName">
             <summary>
             用户名
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.NickName">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.NickName">
             <summary>
             昵称
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.Avatar">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.Avatar">
             <summary>
             头像
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.Gender">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.Gender">
             <summary>
             性别
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.BusinessCard">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.BusinessCard">
             <summary>
             个人名片
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.IsAdmin">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.IsAdmin">
             <summary>
             是否是超级管理员
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.RegisterTime">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.RegisterTime">
             <summary>
             注册时间
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.LastLoginTime">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.LastLoginTime">
             <summary>
             最近登录时间
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.JwtTokenModel.LastLogoutTime">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserAuthModel.LastLogoutTime">
             <summary>
             最近登出时间
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Models.UserTokenModel">
+            <summary>
+            用户Token模型
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.Token">
+            <summary>
+            登录TOKEN
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.RefreshToken">
+            <summary>
+            刷新TOKEN
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.ExpireSeconds">
+            <summary>
+            Token的有效期(单位：秒)
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Models.Models.RefreshTokenParam">
+            <summary>
+            刷新TOKEN请求参数
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.Models.RefreshTokenParam.RefreshToken">
+            <summary>
+            刷新token
+            </summary>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Models.Params.ValidateTokenParam">
+            <summary>
+            验证TOKEN请求参数
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.Params.ValidateTokenParam.Token">
+            <summary>
+            token
             </summary>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Models.Params.LoginParam">

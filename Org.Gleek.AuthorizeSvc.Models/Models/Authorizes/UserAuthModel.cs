@@ -8,13 +8,13 @@ namespace Org.Gleek.AuthorizeSvc.Models
     /// <summary>
     /// 用户授权模型
     /// </summary>
-    public class JwtTokenModel
+    public class UserAuthModel
     {
         /// <summary>
         /// 主键
         /// </summary>
         [Column("id")]
-        [JsonProperty("id"), JsonPropertyName("id")]
+        [JsonProperty("user_id"), JsonPropertyName("user_id")]
         public long Id { get; set; }
 
         /// <summary>

@@ -19,6 +19,32 @@
             认证授权仓储(只读)
             </summary>
         </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Repository.UserRepository">
+            <summary>
+            用户仓储
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Repository.UserRepository.GetUserAuthAsync(System.Int64)">
+            <summary>
+            获取登录授权参数
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Repository.UserRepository.GetUserAsync(System.Int64)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="userId">用户名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Repository.UserRepository.GetUserAsync(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="userName">用户名称</param>
+            <returns></returns>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Repository.AuthorizeOnlyRepository">
             <summary>
             授权仓储(只读)
@@ -38,32 +64,6 @@
             <summary>
             配置文件名称
             </summary>
-        </member>
-        <member name="T:Org.Gleek.AuthorizeSvc.Repository.UserRepository">
-            <summary>
-            用户仓储
-            </summary>
-        </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Repository.UserRepository.GetJwtTokenAsync(System.String)">
-            <summary>
-            获取登录授权参数
-            </summary>
-            <param name="userName">用户名</param>
-            <returns></returns>
-        </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Repository.UserRepository.GetUserAsync(System.String)">
-            <summary>
-            获取用户信息
-            </summary>
-            <param name="userName">用户名称</param>
-            <returns></returns>
-        </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Repository.UserRepository.GetUserAsync(System.Int64)">
-            <summary>
-            获取用户信息
-            </summary>
-            <param name="userId">用户名称</param>
-            <returns></returns>
         </member>
     </members>
 </doc>

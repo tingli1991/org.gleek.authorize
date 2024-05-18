@@ -20,9 +20,11 @@
     <PackageReference Include="Com.GleekFramework.HttpSdk" Version="1.0.0" />
     <PackageReference Include="Com.GleekFramework.KafkaSdk" Version="1.0.0" />
     <PackageReference Include="Com.GleekFramework.NacosSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.RedisSdk" Version="1.0.0" />
     <PackageReference Include="Com.GleekFramework.QueueSdk" Version="1.0.0" />
     <PackageReference Include="Com.GleekFramework.DapperSdk" Version="1.0.0" />
     <PackageReference Include="Com.GleekFramework.ConfigSdk" Version="1.0.0" />
+    <PackageReference Include="Com.GleekFramework.CommonSdk" Version="1.0.0" />
     <PackageReference Include="Com.GleekFramework.SwaggerSdk" Version="1.0.0" />
     <PackageReference Include="Com.GleekFramework.AssemblySdk" Version="1.0.0" />
     <PackageReference Include="Com.GleekFramework.ContractSdk" Version="1.0.0" />

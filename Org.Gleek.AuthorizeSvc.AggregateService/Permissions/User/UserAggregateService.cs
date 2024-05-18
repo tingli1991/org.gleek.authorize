@@ -1,4 +1,4 @@
-﻿using Com.GleekFramework.ContractSdk;
+﻿using Org.Gleek.AuthorizeSvc.Entitys;
 using Org.Gleek.AuthorizeSvc.Models;
 using Org.Gleek.AuthorizeSvc.Service;
 
@@ -15,24 +15,23 @@ namespace Org.Gleek.AuthorizeSvc.AggregateService
         public UserService UserService { get; set; }
 
         /// <summary>
-        /// 验证Token信息
+        /// 获取用户信息
         /// </summary>
-        /// <param name="token">token</param>
+        /// <param name="userId">用户Id</param>
         /// <returns></returns>
-        public async Task<ContractResult<JwtTokenModel>> ValidateTokenAsync(string token)
+        public async Task<User> GetUserAsync(long userId)
         {
-            return await UserService.ValidateTokenAsync(token);
+            return await UserService.GetUserAsync(userId);
         }
 
         /// <summary>
-        /// 登录
+        /// 获取登录授权参数
         /// </summary>
-        /// <param name="userName">用户名</param>
-        /// <param name="password">登录密码</param>
+        /// <param name="userId">用户Id</param>
         /// <returns></returns>
-        public async Task<ContractResult<string>> LoginAsync(string userName, string password)
+        public async Task<UserAuthModel> GetUserAuthAsync(long userId)
         {
-            return await UserService.LoginAsync(userName, password);
+            return await UserService.GetUserAuthAsync(userId);
         }
     }
 }

@@ -12,18 +12,36 @@ namespace Org.Gleek.AuthorizeSvc.Repository
         /// <summary>
         /// 获取登录授权参数
         /// </summary>
-        /// <param name="userName">用户名</param>
+        /// <param name="userId">用户Id</param>
         /// <returns></returns>
-        public async Task<JwtTokenModel> GetJwtTokenAsync(string userName)
+        public async Task<UserAuthModel> GetUserAuthAsync(long userId)
         {
-            if (userName.IsNull())
+            if (userId <= 0)
             {
                 return null;
             }
 
             var sql = @"select id,user_name,nick_name,avatar,gender,business_card,is_admin,register_time,last_login_time,last_logout_time 
-            from user where user_name=@UserName and id_deleted=@IsDeleted";
-            return await AuthorizeRepository.GetFirstOrDefaultAsync<JwtTokenModel>(sql, new { UserName = userName, IsDeleted = false });
+            from user where id=@UserId and id_deleted=@IsDeleted";
+            return await AuthorizeRepository.GetFirstOrDefaultAsync<UserAuthModel>(sql, new { UserId = userId, IsDeleted = false });
+        }
+
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="userId">用户名称</param>
+        /// <returns></returns>
+        public async Task<User> GetUserAsync(long userId)
+        {
+            if (userId <= 0)
+            {
+                return null;
+            }
+
+            var sql = @"select id,user_name,password,nick_name,avatar,gender,status,business_card,signature,is_admin,
+            register_time,last_login_time,last_logout_time,version,id_deleted,update_time,create_time,extend,remark 
+            from user where id=@Id and id_deleted=@IsDeleted";
+            return await AuthorizeRepository.GetFirstOrDefaultAsync<User>(sql, new { Id = userId, IsDeleted = false });
         }
 
         /// <summary>
@@ -42,24 +60,6 @@ namespace Org.Gleek.AuthorizeSvc.Repository
             register_time,last_login_time,last_logout_time,version,id_deleted,update_time,create_time,extend,remark 
             from user where user_name=@UserName and id_deleted=@IsDeleted";
             return await AuthorizeRepository.GetFirstOrDefaultAsync<User>(sql, new { UserName = userName, IsDeleted = false });
-        }
-
-        /// <summary>
-        /// 获取用户信息
-        /// </summary>
-        /// <param name="userId">用户名称</param>
-        /// <returns></returns>
-        public async Task<User> GetUserAsync(long userId)
-        {
-            if (userId <= 0)
-            {
-                return null;
-            }
-
-            var sql = @"select id,user_name,password,nick_name,avatar,gender,status,business_card,signature,is_admin,
-            register_time,last_login_time,last_logout_time,version,id_deleted,update_time,create_time,extend,remark 
-            from user where user_name=@Id and id_deleted=@IsDeleted";
-            return await AuthorizeRepository.GetFirstOrDefaultAsync<User>(sql, new { Id = userId, IsDeleted = false });
         }
     }
 }

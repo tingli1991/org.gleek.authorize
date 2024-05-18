@@ -16,5 +16,23 @@ namespace Org.Gleek.AuthorizeSvc.Upgrations
         {
             return await Task.FromResult(new List<string>() { "com_area.sql" });
         }
+
+        /// <summary>
+        /// 执行sql脚本
+        /// </summary>
+        /// <returns></returns>
+        public override Task<IEnumerable<string>> ExecuteScriptsAsync()
+        {
+            return base.ExecuteScriptsAsync();
+        }
+
+        /// <summary>
+        /// 执行代码
+        /// </summary>
+        /// <returns></returns>
+        public override Task ExecuteAsync()
+        {
+            return base.ExecuteAsync();
+        }
     }
 }

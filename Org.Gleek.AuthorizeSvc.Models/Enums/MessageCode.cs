@@ -30,6 +30,18 @@ namespace Org.Gleek.AuthorizeSvc.Models
         /// TOKEN无效
         /// </summary>
         [Description("TOKEN无效")]
-        TOKEN_INVALID = 100103
+        TOKEN_INVALID = 100103,
+
+        /// <summary>
+        /// 请输入TOKEN
+        /// </summary>
+        [Description("请输入TOKEN")]
+        TOKEN_REQUIRED = 100104,
+
+        /// <summary>
+        /// 请输入REFRESH_TOKEN
+        /// </summary>
+        [Description("请输入REFRESH_TOKEN")]
+        REFRESH_TOKEN_REQUIRED = 100105,
     }
 }

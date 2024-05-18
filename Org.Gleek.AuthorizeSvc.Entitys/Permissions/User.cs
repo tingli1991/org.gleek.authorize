@@ -1,6 +1,7 @@
 ﻿using Com.GleekFramework.CommonSdk;
 using Com.GleekFramework.MigrationSdk;
 using Newtonsoft.Json;
+using ProtoBuf;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -20,6 +21,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// 用户名
         /// </summary>
         [MaxLength(50)]
+        [ProtoMember(8)]
         [Comment("用户名")]
         [Column("user_name")]
         [JsonProperty("user_name"), JsonPropertyName("user_name")]
@@ -29,6 +31,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// 密码
         /// </summary>
         [MaxLength(50)]
+        [ProtoMember(9)]
         [Comment("密码")]
         [Column("password")]
         [JsonProperty("password"), JsonPropertyName("password")]
@@ -38,6 +41,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// 昵称
         /// </summary>
         [MaxLength(50)]
+        [ProtoMember(10)]
         [Comment("昵称")]
         [Column("nick_name")]
         [JsonProperty("nick_name"), JsonPropertyName("nick_name")]
@@ -47,6 +51,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// 头像
         /// </summary>
         [MaxLength(500)]
+        [ProtoMember(11)]
         [Comment("头像")]
         [Column("avatar")]
         [JsonProperty("avatar"), JsonPropertyName("avatar")]
@@ -56,6 +61,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// 性别
         /// </summary>
         [Comment("性别")]
+        [ProtoMember(12)]
         [Column("gender")]
         [DefaultValue(30)]
         [JsonProperty("gender"), JsonPropertyName("gender")]
@@ -65,6 +71,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// 状态
         /// </summary>
         [Comment("状态")]
+        [ProtoMember(13)]
         [Column("status")]
         [DefaultValue(10)]
         [JsonProperty("status"), JsonPropertyName("status")]
@@ -74,6 +81,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// 个人名片
         /// </summary>
         [MaxLength(500)]
+        [ProtoMember(14)]
         [Comment("个人名片")]
         [Column("business_card")]
         [JsonProperty("business_card"), JsonPropertyName("business_card")]
@@ -82,6 +90,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 个性签名
         /// </summary>
+        [ProtoMember(15)]
         [MaxLength(1000)]
         [Comment("个性签名")]
         [Column("signature")]
@@ -91,6 +100,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 是否是超级管理员
         /// </summary>
+        [ProtoMember(16)]
         [Column("is_admin")]
         [Comment("是否是超级管理员")]
         [JsonProperty("is_admin"), JsonPropertyName("is_admin")]
@@ -99,6 +109,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 注册时间
         /// </summary>
+        [ProtoMember(17)]
         [Comment("注册时间")]
         [Column("register_time", TypeName = "datetime")]
         [JsonProperty("register_time"), JsonPropertyName("register_time")]
@@ -107,6 +118,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 最近登录时间
         /// </summary>
+        [ProtoMember(18)]
         [Comment("最近登录时间")]
         [Column("last_login_time", TypeName = "datetime")]
         [JsonProperty("last_login_time"), JsonPropertyName("last_login_time")]
@@ -115,6 +127,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 最近登出时间
         /// </summary>
+        [ProtoMember(19)]
         [Comment("最近登出时间")]
         [Column("last_logout_time", TypeName = "datetime")]
         [JsonProperty("last_logout_time"), JsonPropertyName("last_logout_time")]

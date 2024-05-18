@@ -4,39 +4,60 @@
         <name>Org.Gleek.AuthorizeSvc.Service</name>
     </assembly>
     <members>
-        <member name="T:Org.Gleek.AuthorizeSvc.Service.JwtTokenService">
+        <member name="T:Org.Gleek.AuthorizeSvc.Service.BaseService">
             <summary>
-            JWT授权服务
+            基础领域服务
             </summary>
         </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Service.JwtTokenService.ExpireSeconds">
+        <member name="T:Org.Gleek.AuthorizeSvc.Service.UserAuthService">
+            <summary>
+            用户授权授权服务
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Service.UserAuthService.ExpireSeconds">
             <summary>
             Token的有效期
             </summary>
         </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Service.JwtTokenService.SecretKey">
+        <member name="P:Org.Gleek.AuthorizeSvc.Service.UserAuthService.RedisStringRepository">
+            <summary>
+            Redis字符串仓储类
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Service.UserAuthService.SecretKey">
             <summary>
             生成加密Key
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Service.JwtTokenService.GenerateTokenAsync(Org.Gleek.AuthorizeSvc.Models.JwtTokenModel)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.GetUserIdAsync(System.String)">
             <summary>
-            生成登录的Token信息
+            获取授权的用户Id
+            </summary>
+            <param name="fieldName">字段名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.SetUserIdAsync(System.String,System.Int64,System.Int32)">
+            <summary>
+            获取授权的用户Id
+            </summary>
+            <param name="fieldName">字段名称</param>
+            <param name="userId">用户Id</param>
+            <param name="expireSeconds">过期时间(单位：秒)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.GenTokenAsync(Org.Gleek.AuthorizeSvc.Models.UserAuthModel)">
+            <summary>
+            生成Token
             </summary>
             <param name="userInfo">用户信息</param>
             <returns></returns>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Service.JwtTokenService.ValidateTokenAsync(System.String)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.ValidateAsync(System.String)">
             <summary>
             验证Token信息
             </summary>
             <param name="token">token</param>
             <returns></returns>
-        </member>
-        <member name="T:Org.Gleek.AuthorizeSvc.Service.BaseService">
-            <summary>
-            基础领域服务
-            </summary>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Service.UserService">
             <summary>
@@ -48,24 +69,30 @@
             用户仓储
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Service.UserService.JwtTokenService">
+        <member name="P:Org.Gleek.AuthorizeSvc.Service.UserService.RedisStringRepository">
             <summary>
-            Token服务
+            Redis字符串仓储类
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserService.ValidateTokenAsync(System.String)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserService.GetUserAsync(System.String)">
             <summary>
-            验证Token信息
+            获取用户信息
             </summary>
-            <param name="token">token</param>
+            <param name="userName">用户名称</param>
             <returns></returns>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserService.LoginAsync(System.String,System.String)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserService.GetUserAuthAsync(System.Int64)">
             <summary>
-            登录
+            获取登录授权参数
             </summary>
-            <param name="userName">用户名</param>
-            <param name="password">登录密码</param>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserService.GetUserAsync(System.Int64)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="userId">用户名称</param>
             <returns></returns>
         </member>
     </members>
