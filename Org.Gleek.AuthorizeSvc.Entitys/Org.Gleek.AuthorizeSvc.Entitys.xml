@@ -9,6 +9,11 @@
             地区信息表
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Code">
             <summary>
             编码
@@ -39,9 +44,44 @@
             父级
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComArea.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry">
             <summary>
             所属行业信息表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Code">
@@ -62,6 +102,36 @@
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Description">
             <summary>
             描述
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.ComIndustry.Remark">
+            <summary>
+            备注
             </summary>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.AreaLevel">
@@ -129,6 +199,11 @@
             菜单表
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Name">
             <summary>
             名称
@@ -164,9 +239,44 @@
             状态
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Menu.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission">
             <summary>
             菜单权限关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.MenuId">
@@ -179,9 +289,44 @@
             权限
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.MenuPermission.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Operation">
             <summary>
             操作表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.Code">
@@ -199,9 +344,44 @@
             状态
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Operation.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Permission">
             <summary>
             权限表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.Name">
@@ -214,9 +394,44 @@
             状态
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Permission.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation">
             <summary>
             权限操作关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.PermissionId">
@@ -229,9 +444,44 @@
             操作
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.PermissionOperation.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Role">
             <summary>
             角色表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.Name">
@@ -244,9 +494,44 @@
             状态
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.Role.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.RolePermission">
             <summary>
             角色权限关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.RoleId">
@@ -259,9 +544,44 @@
             权限Id
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.User">
             <summary>
             用户表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.UserName">
@@ -324,9 +644,44 @@
             最近登出时间
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserGroup">
             <summary>
             用户组
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.Name">
@@ -349,9 +704,44 @@
             状态
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroup.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole">
             <summary>
             用户组角色关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.UserGroupId">
@@ -364,9 +754,44 @@
             角色Id
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupRole.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser">
             <summary>
             用户组用户关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.UserGroupId">
@@ -379,9 +804,44 @@
             用户
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserGroupUser.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.UserRole">
             <summary>
             用户角色关联表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.Id">
+            <summary>
+            主键
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.UserId">
@@ -392,6 +852,36 @@
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.RoleId">
             <summary>
             角色Id
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.UserRole.Remark">
+            <summary>
+            备注
             </summary>
         </member>
     </members>

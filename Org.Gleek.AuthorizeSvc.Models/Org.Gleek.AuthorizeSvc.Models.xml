@@ -51,6 +51,41 @@
             获取用户Id缓存键
             </summary>
         </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Models.UserAuthConstant">
+            <summary>
+            用户授权相关常量
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.UserAuthConstant.EXPIRE_SECONDS">
+            <summary>
+            Token的有效期
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.UserAuthConstant.USER_INFO_KEY">
+            <summary>
+            用户信息键
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.UserAuthConstant.AUTH_HEADER_KEY">
+            <summary>
+            Token的头部键名称
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.UserAuthConstant.SECRET_KEY">
+            <summary>
+            生成加密Key
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.UserAuthConstant.SymmetricSecurityKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.UserAuthConstant.SigningCredentials">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Models.MessageCode">
             <summary>
             错误信息枚举
@@ -163,7 +198,7 @@
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.ExpireSeconds">
             <summary>
-            Token的有效期(单位：秒)
+            有效期(单位：秒)
             </summary>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Models.Models.RefreshTokenParam">

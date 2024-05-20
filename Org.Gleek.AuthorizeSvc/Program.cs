@@ -7,6 +7,7 @@ using Com.GleekFramework.MigrationSdk;
 using Com.GleekFramework.NacosSdk;
 using Com.GleekFramework.QueueSdk;
 using Com.GleekFramework.RabbitMQSdk;
+using Com.GleekFramework.RedisSdk;
 using Org.Gleek.AuthorizeSvc.Models;
 
 namespace Com.GleekFramework.AppSvc
@@ -38,6 +39,7 @@ namespace Com.GleekFramework.AppSvc
             Host.CreateDefaultBuilder(args)
             .UseAutofac()
             .UseConfig()
+            .UseCsRedis()
             .UseNacosConf()
             .UseHttpClient()
             .UseConfigAttribute()

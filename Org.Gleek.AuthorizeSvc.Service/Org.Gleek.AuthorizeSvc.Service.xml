@@ -14,19 +14,9 @@
             用户授权授权服务
             </summary>
         </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Service.UserAuthService.ExpireSeconds">
-            <summary>
-            Token的有效期
-            </summary>
-        </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Service.UserAuthService.RedisStringRepository">
             <summary>
             Redis字符串仓储类
-            </summary>
-        </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Service.UserAuthService.SecretKey">
-            <summary>
-            生成加密Key
             </summary>
         </member>
         <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.GetUserIdAsync(System.String)">

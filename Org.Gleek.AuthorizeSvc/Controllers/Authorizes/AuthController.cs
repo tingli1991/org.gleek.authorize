@@ -1,7 +1,7 @@
-﻿using Com.GleekFramework.AttributeSdk;
-using Com.GleekFramework.ContractSdk;
+﻿using Com.GleekFramework.ContractSdk;
 using Microsoft.AspNetCore.Mvc;
 using Org.Gleek.AuthorizeSvc.AggregateService;
+using Org.Gleek.AuthorizeSvc.Attributes;
 using Org.Gleek.AuthorizeSvc.Models;
 using Org.Gleek.AuthorizeSvc.Models.Models;
 using Org.Gleek.AuthorizeSvc.Models.Params;
@@ -12,7 +12,7 @@ namespace Org.Gleek.AuthorizeSvc.Controllers
     /// 授权控制器
     /// </summary>
     [Route("api/auth")]
-    public class AuthController : BaseController
+    public class AuthController : UserAuthController
     {
         /// <summary>
         /// 用户聚合服务
@@ -40,6 +40,7 @@ namespace Org.Gleek.AuthorizeSvc.Controllers
         /// </summary>
         /// <param name="param">请求参数</param>
         /// <returns></returns>
+        [UserAuth()]
         [HttpPost("refresh-token")]
         public async Task<ContractResult<UserTokenModel>> RefreshTokenAsync(RefreshTokenParam param)
         {
@@ -51,6 +52,7 @@ namespace Org.Gleek.AuthorizeSvc.Controllers
         /// </summary>
         /// <param name="userId">用户Id</param>
         /// <returns></returns>
+        [UserAuth()]
         [HttpGet("get-user-auth/{user_id}")]
         public async Task<UserAuthModel> GetUserAuthAsync([FromRoute(Name = "user_id")] long userId)
         {

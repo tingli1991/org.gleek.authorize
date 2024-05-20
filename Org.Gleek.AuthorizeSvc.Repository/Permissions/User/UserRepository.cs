@@ -56,9 +56,9 @@ namespace Org.Gleek.AuthorizeSvc.Repository
                 return null;
             }
 
-            var sql = @"select id,user_name,password,nick_name,avatar,gender,status,business_card,signature,is_admin,
+            var sql = @"select id,`user_name`,password,nick_name,avatar,gender,status,business_card,signature,is_admin,
             register_time,last_login_time,last_logout_time,version,id_deleted,update_time,create_time,extend,remark 
-            from user where user_name=@UserName and id_deleted=@IsDeleted";
+            from user where `user_name`=@UserName and id_deleted=@IsDeleted";
             return await AuthorizeRepository.GetFirstOrDefaultAsync<User>(sql, new { UserName = userName, IsDeleted = false });
         }
     }

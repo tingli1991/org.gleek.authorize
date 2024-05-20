@@ -1,13 +1,12 @@
 ﻿using Com.GleekFramework.CommonSdk;
 using Com.GleekFramework.ContractSdk;
+using Com.GleekFramework.HttpSdk;
 using Com.GleekFramework.RedisSdk;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Org.Gleek.AuthorizeSvc.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
-using System.Security.Claims;
-using System.Text;
 
 namespace Org.Gleek.AuthorizeSvc.Service
 {
@@ -17,19 +16,9 @@ namespace Org.Gleek.AuthorizeSvc.Service
     public class UserAuthService : BaseService
     {
         /// <summary>
-        /// Token的有效期
-        /// </summary>
-        private const int ExpireSeconds = 7200;
-
-        /// <summary>
         /// Redis字符串仓储类
         /// </summary>
         public RedisStringRepository RedisStringRepository { get; set; }
-
-        /// <summary>
-        /// 生成加密Key
-        /// </summary>
-        private const string SecretKey = "M02cnQ51Ji97vwT4MO5nvlqvx68BhdEz";
 
         /// <summary>
         /// 获取授权的用户Id
@@ -76,49 +65,47 @@ namespace Org.Gleek.AuthorizeSvc.Service
         /// <returns></returns>
         public async Task<UserTokenModel> GenTokenAsync(UserAuthModel userInfo)
         {
-            var claims = new List<Claim>();
             var propertyInfoList = userInfo.GetPropertyInfoList();
             if (!propertyInfoList.IsNotNull())
             {
                 return null;
             }
 
+            var claims = new Dictionary<string, object>();
             foreach (var propertyInfo in propertyInfoList)
             {
                 var propertyName = propertyInfo.Name;//属性名称
-                var propertyValue = propertyInfo.GetPropertyValue<string>(propertyName);//属性值
+                var propertyValue = userInfo.GetPropertyValue(propertyName);//属性值
                 var customAttribute = propertyInfo.GetCustomAttribute<JsonPropertyAttribute>();
                 if (customAttribute != null)
                 {
                     //绑定自定义属性名称
                     propertyName = customAttribute.PropertyName;
                 }
-                claims.Add(new Claim(propertyName, propertyValue));
+                claims.Add(propertyName, propertyValue);
             }
 
-            var symmetricKey = Encoding.UTF8.GetBytes(SecretKey);
-            var algorithm = SecurityAlgorithms.HmacSha256Signature;
-            var symmetricSecurityKey = new SymmetricSecurityKey(symmetricKey);
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
-                Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddSeconds(ExpireSeconds),
-                SigningCredentials = new SigningCredentials(symmetricSecurityKey, algorithm)
+                Claims = claims,
+                //Subject = new ClaimsIdentity(claims),
+                SigningCredentials = UserAuthConstant.SigningCredentials,
+                Expires = DateTime.UtcNow.AddSeconds(UserAuthConstant.EXPIRE_SECONDS)
             };
 
             var refreshToken = Guid.NewGuid().ToString().ToLower();//生成刷新令牌
-            await SetUserIdAsync(refreshToken, userInfo.Id, ExpireSeconds);//设置刷新Token的缓存
+            await SetUserIdAsync(refreshToken, userInfo.Id, UserAuthConstant.EXPIRE_SECONDS);//设置刷新Token的缓存
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var securityToken = tokenHandler.CreateToken(tokenDescriptor);
             var accessToken = tokenHandler.WriteToken(securityToken);//生成TOKEN字符串
-            await SetUserIdAsync(accessToken.EncryptMd5(), userInfo.Id, ExpireSeconds);//设置登录Token的缓存
+            await SetUserIdAsync(accessToken.EncryptMd5(), userInfo.Id, UserAuthConstant.EXPIRE_SECONDS);//设置登录Token的缓存
             return await Task.FromResult(new UserTokenModel()
             {
                 UserId = userInfo.Id,
                 Token = accessToken,
                 RefreshToken = refreshToken,
-                ExpireSeconds = ExpireSeconds
+                ExpireSeconds = UserAuthConstant.EXPIRE_SECONDS
             });
         }
 
@@ -140,7 +127,6 @@ namespace Org.Gleek.AuthorizeSvc.Service
                 }
 
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var symmetricKey = Encoding.UTF8.GetBytes(SecretKey);
                 var tokenValidationParameters = new TokenValidationParameters()
                 {
                     ValidateIssuer = false,
@@ -148,7 +134,7 @@ namespace Org.Gleek.AuthorizeSvc.Service
                     ValidateAudience = false,
                     ValidateIssuerSigningKey = true,
                     ClockSkew = TimeSpan.Zero, //确保即时的token过期验证
-                    IssuerSigningKey = new SymmetricSecurityKey(symmetricKey),
+                    IssuerSigningKey = UserAuthConstant.SymmetricSecurityKey,
                 };
 
                 var claimsPrincipal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
@@ -158,34 +144,13 @@ namespace Org.Gleek.AuthorizeSvc.Service
                     return result;
                 }
 
-                var userInfo = new UserAuthModel();//用户信息
-                var claims = claimsPrincipal.Claims;
-                var propertyInfoList = typeof(UserAuthModel).GetPropertyInfoList();
-                foreach (var propertyInfo in propertyInfoList)
-                {
-                    var propertyName = propertyInfo.Name;//属性名称
-                    var customAttribute = propertyInfo.GetCustomAttribute<JsonPropertyAttribute>();
-                    if (customAttribute != null)
-                    {
-                        var propertyTypeName = customAttribute.PropertyName;
-                        var propertyValue = claims.FirstOrDefault(e => e.Type == propertyTypeName)?.Value;//属性值
-                        userInfo.SetPropertyValue(propertyName, propertyValue);//设置属性值
-                    }
-                    else
-                    {
-                        var propertyValue = claims.FirstOrDefault(e => e.Type == propertyName)?.Value;//属性值
-                        userInfo.SetPropertyValue(propertyName, propertyValue);//设置属性值
-                    }
-                }
-
-                if (userInfo.Id <= 0)
-                {
-                    result.SetError(MessageCode.TOKEN_INVALID);
-                    return result;
-                }
+                var jwtSecurityToken = (JwtSecurityToken)securityToken;
+                var claimsDic = jwtSecurityToken.Claims.ToDictionary(k => k.Type, v => v.Value);//Token关系字典
+                var jsonValue = JsonConvert.SerializeObject(claimsDic);
+                var userInfo = JsonConvert.DeserializeObject<UserAuthModel>(jsonValue);
                 result.SetSuceccful(userInfo);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 result.SetError(MessageCode.TOKEN_INVALID);
             }

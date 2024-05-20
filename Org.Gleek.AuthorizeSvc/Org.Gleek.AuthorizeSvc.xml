@@ -4,6 +4,27 @@
         <name>Org.Gleek.AuthorizeSvc</name>
     </assembly>
     <members>
+        <member name="T:Org.Gleek.AuthorizeSvc.Attributes.UserAuthAttribute">
+            <summary>
+            用户授权
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Attributes.UserAuthAttribute.TokenExpired">
+            <summary>
+            是否需要验证TOKEN的有效期（默认：true）
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Attributes.UserAuthAttribute.AuthAggregateService">
+            <summary>
+            登录聚合服务
+            </summary>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Attributes.UserAuthAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            授权方法
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Controllers.AuthController">
             <summary>
             授权控制器
@@ -73,6 +94,16 @@
             </summary>
             <param name="userId">用户名称</param>
             <returns></returns>
+        </member>
+        <member name="T:Org.Gleek.AuthorizeSvc.Controllers.UserAuthController">
+            <summary>
+            用户授权控制器
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Controllers.UserAuthController.UserInfo">
+            <summary>
+            用户信息
+            </summary>
         </member>
         <member name="T:Com.GleekFramework.AppSvc.Program">
             <summary>
