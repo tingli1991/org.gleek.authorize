@@ -15,48 +15,43 @@ namespace Org.Gleek.AuthorizeSvc.Controllers
     public class AuthController : UserAuthController
     {
         /// <summary>
-        /// 用户聚合服务
-        /// </summary>
-        public UserAggregateService UserAggregateService { get; set; }
-
-        /// <summary>
         /// 授权聚合服务
         /// </summary>
         public AuthAggregateService AuthAggregateService { get; set; }
 
         /// <summary>
-        /// 验证TOKEN
-        /// </summary>
-        /// <param name="param">请求参数</param>
-        /// <returns></returns>
-        [HttpPost("validate-token")]
-        public async Task<ContractResult<UserAuthModel>> ValidateTokenAsync(ValidateTokenParam param)
-        {
-            return await AuthAggregateService.ValidateTokenAsync(param.Token);
-        }
-
-        /// <summary>
-        /// 刷新TOKEN
-        /// </summary>
-        /// <param name="param">请求参数</param>
-        /// <returns></returns>
-        [UserAuth()]
-        [HttpPost("refresh-token")]
-        public async Task<ContractResult<UserTokenModel>> RefreshTokenAsync(RefreshTokenParam param)
-        {
-            return await AuthAggregateService.RefreshTokenAsync(param.RefreshToken);
-        }
-
-        /// <summary>
         /// 获取登录授权信息
         /// </summary>
-        /// <param name="userId">用户Id</param>
         /// <returns></returns>
         [UserAuth()]
-        [HttpGet("get-user-auth/{user_id}")]
-        public async Task<UserAuthModel> GetUserAuthAsync([FromRoute(Name = "user_id")] long userId)
+        [HttpGet("get-user-auth")]
+        public async Task<ContractResult<UserAuthModel>> GetUserAuthAsync()
         {
-            return await UserAggregateService.GetUserAuthAsync(userId);
+            return await AuthAggregateService.GetUserAuthAsync(AccessToken);
+        }
+
+        /// <summary>
+        /// 验证访问令牌
+        /// </summary>
+        /// <param name="param">请求参数</param>
+        /// <returns></returns>
+        [UserAuth()]
+        [HttpPost("validate-access-token")]
+        public async Task<ContractResult<UserAuthModel>> ValidateAccessTokenAsync(ValidateTokenParam param)
+        {
+            return await AuthAggregateService.ValidateAccessTokenAsync(param.Token);
+        }
+
+        /// <summary>
+        /// 刷新访问令牌
+        /// </summary>
+        /// <param name="param">请求参数</param>
+        /// <returns></returns>
+        [UserAuth()]
+        [HttpPost("refresh-access-token")]
+        public async Task<ContractResult<UserTokenModel>> RefreshAccessTokenAsync(RefreshTokenParam param)
+        {
+            return await AuthAggregateService.RefreshAccessTokenAsync(UserInfo.Id, param.RefreshToken, AccessToken);
         }
     }
 }

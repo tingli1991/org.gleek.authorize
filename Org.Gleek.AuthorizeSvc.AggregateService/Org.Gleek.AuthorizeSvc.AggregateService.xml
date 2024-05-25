@@ -19,18 +19,32 @@
             Token服务
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.AggregateService.AuthAggregateService.ValidateTokenAsync(System.String)">
+        <member name="P:Org.Gleek.AuthorizeSvc.AggregateService.AuthAggregateService.RedisLockRepository">
             <summary>
-            验证Token信息
+            Redis分布式锁仓储
             </summary>
-            <param name="token">token</param>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.AggregateService.AuthAggregateService.ValidateAccessTokenAsync(System.String)">
+            <summary>
+            验证访问令牌
+            </summary>
+            <param name="accessToken">访问令牌</param>
             <returns></returns>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.AggregateService.AuthAggregateService.RefreshTokenAsync(System.String)">
+        <member name="M:Org.Gleek.AuthorizeSvc.AggregateService.AuthAggregateService.GetUserAuthAsync(System.String)">
             <summary>
-            刷新TOKEN
+            获取登录授权信息
             </summary>
-            <param name="refreshToken">刷新TOKEN</param>
+            <param name="accessToken">访问令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.AggregateService.AuthAggregateService.RefreshAccessTokenAsync(System.Int64,System.String,System.String)">
+            <summary>
+            刷新访问令牌
+            </summary>
+            <param name="userId">用户Id</param>
+            <param name="refreshToken">刷新令牌</param>
+            <param name="accessToken">访问令牌</param>
             <returns></returns>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.AggregateService.LoginAggregateService">

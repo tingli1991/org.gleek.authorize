@@ -47,12 +47,7 @@ namespace Org.Gleek.AuthorizeSvc.AggregateService
             }
 
             var userAuthInfo = userInfo.Map<User, UserAuthModel>();
-            var userTokenInfo = await UserAuthService.GenTokenAsync(userAuthInfo);
-            if (userTokenInfo == null)
-            {
-                return result.SetError(MessageCode.UNKNOWN_USER);
-            }
-            return result.SetSuceccful(userTokenInfo);
+            return await UserAuthService.GenAccessTokenAsync(userAuthInfo);
         }
     }
 }

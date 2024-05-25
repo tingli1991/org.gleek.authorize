@@ -2,7 +2,6 @@
 using Com.GleekFramework.MigrationSdk;
 using Newtonsoft.Json;
 using ProtoBuf;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -76,7 +75,6 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         [Comment("性别")]
         [ProtoMember(6)]
         [Column("gender")]
-        [DefaultValue(30)]
         [JsonProperty("gender"), JsonPropertyName("gender")]
         public Gender Gender { get; set; }
 
@@ -86,7 +84,6 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         [Comment("状态")]
         [ProtoMember(7)]
         [Column("status")]
-        [DefaultValue(10)]
         [JsonProperty("status"), JsonPropertyName("status")]
         public EnableStatus Status { get; set; }
 

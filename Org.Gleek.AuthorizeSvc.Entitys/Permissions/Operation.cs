@@ -2,7 +2,6 @@
 using Com.GleekFramework.MigrationSdk;
 using Newtonsoft.Json;
 using ProtoBuf;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -56,7 +55,6 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         [ProtoMember(4)]
         [Comment("状态")]
         [Column("status")]
-        [DefaultValue(10)]
         [JsonProperty("status"), JsonPropertyName("status")]
         public EnableStatus Status { get; set; }
 

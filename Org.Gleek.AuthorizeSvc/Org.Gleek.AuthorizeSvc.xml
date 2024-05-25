@@ -14,6 +14,11 @@
             是否需要验证TOKEN的有效期（默认：true）
             </summary>
         </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Attributes.UserAuthAttribute.NLogService">
+            <summary>
+            日志服务
+            </summary>
+        </member>
         <member name="F:Org.Gleek.AuthorizeSvc.Attributes.UserAuthAttribute.AuthAggregateService">
             <summary>
             登录聚合服务
@@ -30,35 +35,29 @@
             授权控制器
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Controllers.AuthController.UserAggregateService">
-            <summary>
-            用户聚合服务
-            </summary>
-        </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Controllers.AuthController.AuthAggregateService">
             <summary>
             授权聚合服务
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.ValidateTokenAsync(Org.Gleek.AuthorizeSvc.Models.Params.ValidateTokenParam)">
-            <summary>
-            验证TOKEN
-            </summary>
-            <param name="param">请求参数</param>
-            <returns></returns>
-        </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.RefreshTokenAsync(Org.Gleek.AuthorizeSvc.Models.Models.RefreshTokenParam)">
-            <summary>
-            刷新TOKEN
-            </summary>
-            <param name="param">请求参数</param>
-            <returns></returns>
-        </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.GetUserAuthAsync(System.Int64)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.GetUserAuthAsync">
             <summary>
             获取登录授权信息
             </summary>
-            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.ValidateAccessTokenAsync(Org.Gleek.AuthorizeSvc.Models.Params.ValidateTokenParam)">
+            <summary>
+            验证访问令牌
+            </summary>
+            <param name="param">请求参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Controllers.AuthController.RefreshAccessTokenAsync(Org.Gleek.AuthorizeSvc.Models.Models.RefreshTokenParam)">
+            <summary>
+            刷新访问令牌
+            </summary>
+            <param name="param">请求参数</param>
             <returns></returns>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Controllers.LoginController">
@@ -98,6 +97,11 @@
         <member name="T:Org.Gleek.AuthorizeSvc.Controllers.UserAuthController">
             <summary>
             用户授权控制器
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Controllers.UserAuthController.AccessToken">
+            <summary>
+            访问令牌
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Controllers.UserAuthController.UserInfo">

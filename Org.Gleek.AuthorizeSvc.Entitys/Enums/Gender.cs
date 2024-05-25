@@ -5,8 +5,15 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// <summary>
     /// 性别
     /// </summary>
+    [Serializable]
     public enum Gender
     {
+        /// <summary>
+        /// 未知
+        /// </summary>
+        [Description("未知")]
+        Unknown = 0,
+
         /// <summary>
         /// 男
         /// </summary>
@@ -17,12 +24,6 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// 女
         /// </summary>
         [Description("女")]
-        WoMan = 20,
-
-        /// <summary>
-        /// 其他
-        /// </summary>
-        [Description("其他")]
-        Other = 30
+        WoMan = 20
     }
 }

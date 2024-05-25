@@ -4,6 +4,106 @@
         <name>Org.Gleek.AuthorizeSvc.Entitys</name>
     </assembly>
     <members>
+        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.BusinessCard">
+            <summary>
+            个人名片
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Signature">
+            <summary>
+            个性签名
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.IsAdmin">
+            <summary>
+            是否是超级管理员
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.RegisterTime">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.LastLoginTime">
+            <summary>
+            最近登录时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.LastLogoutTime">
+            <summary>
+            最近登出时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Extend">
+            <summary>
+            透传字段
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.ComArea">
             <summary>
             地区信息表
@@ -139,6 +239,11 @@
             地区级别
             </summary>
         </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.AreaLevel.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
         <member name="F:Org.Gleek.AuthorizeSvc.Entitys.AreaLevel.Province">
             <summary>
             省份
@@ -164,12 +269,17 @@
             启用状态
             </summary>
         </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus.Enable">
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus.Enabled">
             <summary>
             启用
             </summary>
         </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus.Disable">
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.EnableStatus.Disabled">
             <summary>
             禁用
             </summary>
@@ -177,6 +287,11 @@
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Gender">
             <summary>
             性别
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.Gender.Unknown">
+            <summary>
+            未知
             </summary>
         </member>
         <member name="F:Org.Gleek.AuthorizeSvc.Entitys.Gender.Man">
@@ -187,11 +302,6 @@
         <member name="F:Org.Gleek.AuthorizeSvc.Entitys.Gender.WoMan">
             <summary>
             女
-            </summary>
-        </member>
-        <member name="F:Org.Gleek.AuthorizeSvc.Entitys.Gender.Other">
-            <summary>
-            其他
             </summary>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Entitys.Menu">
@@ -570,106 +680,6 @@
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Entitys.RolePermission.Remark">
-            <summary>
-            备注
-            </summary>
-        </member>
-        <member name="T:Org.Gleek.AuthorizeSvc.Entitys.User">
-            <summary>
-            用户表
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Id">
-            <summary>
-            主键
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.UserName">
-            <summary>
-            用户名
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Password">
-            <summary>
-            密码
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.NickName">
-            <summary>
-            昵称
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Avatar">
-            <summary>
-            头像
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Gender">
-            <summary>
-            性别
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Status">
-            <summary>
-            状态
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.BusinessCard">
-            <summary>
-            个人名片
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Signature">
-            <summary>
-            个性签名
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.IsAdmin">
-            <summary>
-            是否是超级管理员
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.RegisterTime">
-            <summary>
-            注册时间
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.LastLoginTime">
-            <summary>
-            最近登录时间
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.LastLogoutTime">
-            <summary>
-            最近登出时间
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.IsDeleted">
-            <summary>
-            是否删除
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.UpdateTime">
-            <summary>
-            更新时间
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.CreateTime">
-            <summary>
-            创建时间
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Version">
-            <summary>
-            版本号
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Extend">
-            <summary>
-            透传字段
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Entitys.User.Remark">
             <summary>
             备注
             </summary>

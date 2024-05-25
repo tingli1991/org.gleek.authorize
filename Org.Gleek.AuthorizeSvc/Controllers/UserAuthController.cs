@@ -9,8 +9,17 @@ namespace Org.Gleek.AuthorizeSvc.Controllers
     public class UserAuthController : BaseController
     {
         /// <summary>
+        /// 访问令牌
+        /// </summary>
+        public string AccessToken =>
+             HttpContext.Items.ContainsKey(UserAuthConstant.AUTH_HEADER_KEY)
+            ? $"{HttpContext.Items[UserAuthConstant.AUTH_HEADER_KEY]}" : null;
+
+        /// <summary>
         /// 用户信息
         /// </summary>
-        public UserAuthModel UserInfo { get; set; }
+        public UserAuthModel UserInfo =>
+            HttpContext.Items.ContainsKey(UserAuthConstant.USER_INFO_KEY)
+            ? (UserAuthModel)HttpContext.Items[UserAuthConstant.USER_INFO_KEY] : null;
     }
 }

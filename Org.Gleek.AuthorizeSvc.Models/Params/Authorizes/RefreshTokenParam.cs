@@ -10,7 +10,7 @@ namespace Org.Gleek.AuthorizeSvc.Models.Models
     public class RefreshTokenParam
     {
         /// <summary>
-        /// 刷新token
+        /// 刷新TOKEN
         /// </summary>
         [Required(ErrorMessage = nameof(MessageCode.REFRESH_TOKEN_REQUIRED))]
         [JsonProperty("refresh_token"), JsonPropertyName("refresh_token")]

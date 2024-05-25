@@ -14,40 +14,85 @@
             用户授权授权服务
             </summary>
         </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Service.UserAuthService.NLogService">
+            <summary>
+            日志服务
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Service.UserAuthService.RedisLockRepository">
+            <summary>
+            Redis分布式锁仓储
+            </summary>
+        </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Service.UserAuthService.RedisStringRepository">
             <summary>
             Redis字符串仓储类
             </summary>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.GetUserIdAsync(System.String)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.GenAccessTokenAsync(Org.Gleek.AuthorizeSvc.Models.UserAuthModel)">
             <summary>
-            获取授权的用户Id
-            </summary>
-            <param name="fieldName">字段名称</param>
-            <returns></returns>
-        </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.SetUserIdAsync(System.String,System.Int64,System.Int32)">
-            <summary>
-            获取授权的用户Id
-            </summary>
-            <param name="fieldName">字段名称</param>
-            <param name="userId">用户Id</param>
-            <param name="expireSeconds">过期时间(单位：秒)</param>
-            <returns></returns>
-        </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.GenTokenAsync(Org.Gleek.AuthorizeSvc.Models.UserAuthModel)">
-            <summary>
-            生成Token
+            生成令牌
             </summary>
             <param name="userInfo">用户信息</param>
             <returns></returns>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.ValidateAsync(System.String)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.ValidateAccessTokenAsync(System.String)">
             <summary>
-            验证Token信息
+            验证令牌是否过期
             </summary>
-            <param name="token">token</param>
+            <param name="accessToken">TOKEN</param>
             <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.GetAccessTokenAsync(System.Int64)">
+            <summary>
+            获取访问令牌
+            </summary>
+            <param name="userId">字段名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.GetRefreshTokenAsync(System.String)">
+            <summary>
+            获取刷新令牌
+            </summary>
+            <param name="accessToken">刷新令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.DeleteRefreshTokenAsync(System.String)">
+            <summary>
+            删除刷新令牌
+            </summary>
+            <param name="accessToken">刷新令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.ParseJwtSecurityTokenAsync(System.String)">
+            <summary>
+            转换用户授权模型
+            </summary>
+            <param name="accessToken">访问令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.ParseJwtSecurityTokenAsync(Microsoft.IdentityModel.Tokens.SecurityToken)">
+            <summary>
+            转换用户授权模型
+            </summary>
+            <param name="securityToken">TOKEN信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.ConvertClaimsAsync(Org.Gleek.AuthorizeSvc.Models.UserAuthModel)">
+            <summary>
+            转换Token存储的数据模型字典
+            </summary>
+            <param name="userInfo">用户信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Service.UserAuthService.SetUserAccessTokenAndRefreshTokenAsync(System.Int64,System.String,System.Int32)">
+            <summary>
+            设置用户的访问令牌和刷新令牌缓存
+            </summary>
+            <param name="userId">用户Id</param>
+            <param name="accessToken">访问令牌</param>
+            <param name="expireSeconds">过期时间(单位：秒)</param>
+            <returns>刷新令牌</returns>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Service.UserService">
             <summary>

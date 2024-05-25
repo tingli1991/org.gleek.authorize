@@ -1,9 +1,11 @@
 ﻿using Com.GleekFramework.AutofacSdk;
 using Com.GleekFramework.CommonSdk;
 using Com.GleekFramework.ContractSdk;
+using Com.GleekFramework.HttpSdk;
+using Com.GleekFramework.NLogSdk;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Newtonsoft.Json;
+using Microsoft.Extensions.Primitives;
 using Org.Gleek.AuthorizeSvc.AggregateService;
 using Org.Gleek.AuthorizeSvc.Models;
 using System.Net;
@@ -22,9 +24,14 @@ namespace Org.Gleek.AuthorizeSvc.Attributes
         public bool TokenExpired { get; set; } = true;
 
         /// <summary>
+        /// 日志服务
+        /// </summary>
+        private static readonly NLogService NLogService = AutofacProvider.GetService<NLogService>();
+
+        /// <summary>
         /// 登录聚合服务
         /// </summary>
-        private static AuthAggregateService AuthAggregateService = AutofacProvider.GetService<AuthAggregateService>();
+        private static readonly AuthAggregateService AuthAggregateService = AutofacProvider.GetService<AuthAggregateService>();
 
         /// <summary>
         /// 授权方法
@@ -32,34 +39,48 @@ namespace Org.Gleek.AuthorizeSvc.Attributes
         /// <param name="context"></param>
         public async void OnAuthorization(AuthorizationFilterContext context)
         {
-            var headers = context.HttpContext.Request.Headers;
-            if (headers.IsNullOrEmpty() || !headers.ContainsKey(UserAuthConstant.AUTH_HEADER_KEY))
+            var request = context.HttpContext.Request;//请求参数
+            var beginTime = DateTime.Now.ToCstTime();//开始授权时间
+            var result = new ContractResult<UserAuthModel>();//返回值
+            var headers = context.HttpContext.Request.Headers;//请求头
+            try
             {
-                context.Result = new UnauthorizedResult();
-                return;
-            }
-
-            var token = headers[UserAuthConstant.AUTH_HEADER_KEY];//Token信息
-            if (token.IsNullOrEmpty())
-            {
-                context.Result = new UnauthorizedResult();
-                return;
-            }
-
-            var response = await AuthAggregateService.ValidateTokenAsync(token);
-            if (TokenExpired && !response.IsSuceccful())
-            {
-                context.Result = new ContentResult()
+                if (!headers.TryGetValue(UserAuthConstant.AUTH_HEADER_KEY, out StringValues token))
                 {
-                    StatusCode = (int)HttpStatusCode.OK,//返回状态码设置为200，表示成功
-                    Content = JsonConvert.SerializeObject(response),
-                    ContentType = "application/json;charset=utf-8",//设置返回格式
-                };
-                return;
-            }
+                    result.SetError(MessageCode.TOKEN_INVALID);
+                    return;
+                }
 
-            //附加Http参数上下文
-            context.HttpContext.Items.Add(UserAuthConstant.USER_INFO_KEY, response.Data);
+                if (token.IsNullOrEmpty())
+                {
+                    result.SetError(MessageCode.TOKEN_INVALID);
+                    return;
+                }
+                result = await AuthAggregateService.ValidateAccessTokenAsync(token);
+
+                //附加Http参数上下文
+                context.HttpContext.Items.Add(UserAuthConstant.AUTH_HEADER_KEY, token);
+                context.HttpContext.Items.Add(UserAuthConstant.USER_INFO_KEY, result.Data);
+            }
+            catch (Exception ex)
+            {
+                var url = $"{request.Host}/{request.Path}";//接口路径               
+                var requestBody = request.GetRequestBody();//Body参数
+                var totalMilliseconds = (long)(DateTime.Now.ToCstTime() - beginTime).TotalMicroseconds;
+                NLogService.Error($"【用户授权】Body参数：{requestBody}，Query参数：{request.Query}，返回值：{result.SerializeObject()}，异常：{ex}", headers.GetSerialNo(), url, totalMilliseconds);
+            }
+            finally
+            {
+                if (TokenExpired && !result.IsSuceccful())
+                {
+                    context.Result = new ContentResult()
+                    {
+                        StatusCode = (int)HttpStatusCode.OK,//状态码
+                        Content = result.SerializeObject(),//序列化
+                        ContentType = "application/json;charset=utf-8",//设置返回格式
+                    };
+                }
+            }
         }
     }
 }

@@ -16,21 +16,27 @@ namespace Org.Gleek.AuthorizeSvc.Models
         public long UserId { get; set; }
 
         /// <summary>
-        /// 登录TOKEN
+        /// 访问令牌
         /// </summary>
-        [JsonProperty("token"), JsonPropertyName("token")]
-        public string Token { get; set; }
+        [JsonProperty("access_token"), JsonPropertyName("access_token")]
+        public string AccessToken { get; set; }
 
         /// <summary>
-        /// 刷新TOKEN
+        /// 令牌的有效期（秒）
+        /// </summary>
+        [JsonProperty("expires_in"), JsonPropertyName("expires_in")]
+        public int ExpiresIn { get; set; }
+
+        /// <summary>
+        /// 令牌过期时间
+        /// </summary>
+        [JsonProperty("expire_time"), JsonPropertyName("expire_time")]
+        public DateTime ExpireTime { get; set; }
+
+        /// <summary>
+        /// 刷新令牌
         /// </summary>
         [JsonProperty("refresh_token"), JsonPropertyName("refresh_token")]
         public string RefreshToken { get; set; }
-
-        /// <summary>
-        /// 有效期(单位：秒)
-        /// </summary>
-        [JsonProperty("expire_seconds"), JsonPropertyName("expire_seconds")]
-        public int ExpireSeconds { get; set; }
     }
 }

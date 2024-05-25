@@ -5,8 +5,15 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// <summary>
     /// 地区级别
     /// </summary>
+    [Serializable]
     public enum AreaLevel
     {
+        /// <summary>
+        /// 未知
+        /// </summary>
+        [Description("未知")]
+        Unknown = 0,
+
         /// <summary>
         /// 省份
         /// </summary>

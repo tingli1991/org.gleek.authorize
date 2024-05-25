@@ -39,6 +39,13 @@
             Redis缓存常量
             </summary>
         </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetCacheKey(System.String)">
+            <summary>
+            获取缓存KEYS
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
         <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetUserCacheKey(System.Int64)">
             <summary>
             获取用户信息缓存键
@@ -46,10 +53,33 @@
             <param name="userId">用户Id</param>
             <returns></returns>
         </member>
-        <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetUserIdKey(System.String)">
+        <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetAccessTokenLockKey(System.Int64)">
             <summary>
-            获取用户Id缓存键
+            获取访问令牌缓存锁键
             </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetRefreshTokenLockKey(System.Int64)">
+            <summary>
+            获取刷新令牌的缓存锁键
+            </summary>
+            <param name="userId">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetAccessTokenKey(System.Int64)">
+            <summary>
+            获取访问令牌缓存键
+            </summary>
+            <param name="userId">访问令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:Org.Gleek.AuthorizeSvc.Models.RedisCacheConstant.GetRefreshTokenKey(System.String)">
+            <summary>
+            获取刷新令牌的缓存键
+            </summary>
+            <param name="accessToken">访问令牌</param>
+            <returns></returns>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Models.UserAuthConstant">
             <summary>
@@ -91,6 +121,16 @@
             错误信息枚举
             </summary>
         </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.FREQUENT_OPERATION">
+            <summary>
+            操作频繁
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.ILLEGAL_REQUEST">
+            <summary>
+            非法请求
+            </summary>
+        </member>
         <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.UNKNOWN_USER">
             <summary>
             未知的用户
@@ -114,6 +154,11 @@
         <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.TOKEN_REQUIRED">
             <summary>
             请输入TOKEN
+            </summary>
+        </member>
+        <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.REFRESH_TOKEN_INVALID">
+            <summary>
+            REFRESH_TOKEN无效
             </summary>
         </member>
         <member name="F:Org.Gleek.AuthorizeSvc.Models.MessageCode.REFRESH_TOKEN_REQUIRED">
@@ -186,19 +231,24 @@
             用户Id
             </summary>
         </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.Token">
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.AccessToken">
             <summary>
-            登录TOKEN
+            访问令牌
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.ExpiresIn">
+            <summary>
+            令牌的有效期（秒）
+            </summary>
+        </member>
+        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.ExpireTime">
+            <summary>
+            令牌过期时间
             </summary>
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.RefreshToken">
             <summary>
-            刷新TOKEN
-            </summary>
-        </member>
-        <member name="P:Org.Gleek.AuthorizeSvc.Models.UserTokenModel.ExpireSeconds">
-            <summary>
-            有效期(单位：秒)
+            刷新令牌
             </summary>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Models.Models.RefreshTokenParam">
@@ -208,7 +258,7 @@
         </member>
         <member name="P:Org.Gleek.AuthorizeSvc.Models.Models.RefreshTokenParam.RefreshToken">
             <summary>
-            刷新token
+            刷新TOKEN
             </summary>
         </member>
         <member name="T:Org.Gleek.AuthorizeSvc.Models.Params.ValidateTokenParam">

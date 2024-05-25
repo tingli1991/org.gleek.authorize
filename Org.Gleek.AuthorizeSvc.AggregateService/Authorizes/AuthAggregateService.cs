@@ -1,5 +1,6 @@
 ﻿using Com.GleekFramework.CommonSdk;
 using Com.GleekFramework.ContractSdk;
+using Com.GleekFramework.RedisSdk;
 using Org.Gleek.AuthorizeSvc.Entitys;
 using Org.Gleek.AuthorizeSvc.Models;
 using Org.Gleek.AuthorizeSvc.Service;
@@ -22,39 +23,91 @@ namespace Org.Gleek.AuthorizeSvc.AggregateService
         public UserAuthService UserAuthService { get; set; }
 
         /// <summary>
-        /// 验证Token信息
+        /// Redis分布式锁仓储
         /// </summary>
-        /// <param name="token">token</param>
+        public RedisLockRepository RedisLockRepository { get; set; }
+
+        /// <summary>
+        /// 验证访问令牌
+        /// </summary>
+        /// <param name="accessToken">访问令牌</param>
         /// <returns></returns>
-        public async Task<ContractResult<UserAuthModel>> ValidateTokenAsync(string token)
+        public async Task<ContractResult<UserAuthModel>> ValidateAccessTokenAsync(string accessToken)
         {
-            return await UserAuthService.ValidateAsync(token);
+            return await UserAuthService.ValidateAccessTokenAsync(accessToken);
         }
 
         /// <summary>
-        /// 刷新TOKEN
+        /// 获取登录授权信息
         /// </summary>
-        /// <param name="refreshToken">刷新TOKEN</param>
+        /// <param name="accessToken">访问令牌</param>
         /// <returns></returns>
-        public async Task<ContractResult<UserTokenModel>> RefreshTokenAsync(string refreshToken)
+        public async Task<ContractResult<UserAuthModel>> GetUserAuthAsync(string accessToken)
         {
-            var result = new ContractResult<UserTokenModel>();
-            var userId = await UserAuthService.GetUserIdAsync(refreshToken);
-            if (!userId.HasValue)
+            var result = new ContractResult<UserAuthModel>();
+            var (userAuthInfo, expireTime) = await UserAuthService.ParseJwtSecurityTokenAsync(accessToken);
+            if (userAuthInfo == null || !expireTime.HasValue)
             {
-                result.SetError(MessageCode.TOKEN_INVALID);
+                result.SetError(MessageCode.UNKNOWN_USER);
                 return result;
             }
 
-            var userInfo = await UserService.GetUserAsync(userId.Value);
-            if (userInfo == null)
+            var cacheAccessToken = await UserAuthService.GetAccessTokenAsync(userAuthInfo.Id);
+            if (cacheAccessToken == null || !cacheAccessToken.Equals(accessToken))
             {
-                return result.SetError(MessageCode.UNKNOWN_USER);
+                result.SetError(MessageCode.UNKNOWN_USER);
+                return result;
+            }
+            return result.SetSuceccful(userAuthInfo);
+        }
+
+        /// <summary>
+        /// 刷新访问令牌
+        /// </summary>
+        /// <param name="userId">用户Id</param>
+        /// <param name="refreshToken">刷新令牌</param>
+        /// <param name="accessToken">访问令牌</param>
+        /// <returns></returns>
+        public async Task<ContractResult<UserTokenModel>> RefreshAccessTokenAsync(long userId, string refreshToken, string accessToken)
+        {
+            var result = new ContractResult<UserTokenModel>();
+            var refreshTokenLockKey = RedisCacheConstant.GetRefreshTokenLockKey(userId);
+            using var lockClient = await RedisLockRepository.LockUpAsync(refreshTokenLockKey);
+            if (lockClient == null)
+            {
+                result.SetError(MessageCode.FREQUENT_OPERATION);
+                return result;
             }
 
-            var userAuthInfo = userInfo.Map<User, UserAuthModel>();
-            var newUserAuthInfo = await UserAuthService.GenTokenAsync(userAuthInfo); //重新生成新的访问令牌
-            return result.SetSuceccful(newUserAuthInfo);// 返回新的令牌模型
+            var (userAuthInfo, expireTime) = await UserAuthService.ParseJwtSecurityTokenAsync(accessToken);
+            if (userAuthInfo == null || !expireTime.HasValue)
+            {
+                result.SetError(MessageCode.UNKNOWN_USER);
+                return result;
+            }
+
+            if (userId != userAuthInfo.Id)
+            {
+                result.SetError(MessageCode.ILLEGAL_REQUEST);
+                return result;
+            }
+
+            var cacheRefreshToken = await UserAuthService.GetRefreshTokenAsync(accessToken);
+            if (cacheRefreshToken.IsNullOrEmpty() || !cacheRefreshToken.Equals(refreshToken, StringComparison.CurrentCultureIgnoreCase))
+            {
+                result.SetError(MessageCode.REFRESH_TOKEN_INVALID);
+                return result;
+            }
+
+            var userInfo = await UserService.GetUserAsync(userAuthInfo.Id);
+            if (userAuthInfo == null)
+            {
+                result.SetError(MessageCode.UNKNOWN_USER);
+                return result;
+            }
+
+            userAuthInfo = userInfo.Map<User, UserAuthModel>();
+            return await UserAuthService.GenAccessTokenAsync(userAuthInfo); //重新生成新的访问令牌
         }
     }
 }
