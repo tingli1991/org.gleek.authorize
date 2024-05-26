@@ -11,13 +11,13 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// <summary>
     /// 菜单权限关联表
     /// </summary>
-    [Table("menu_permission")]
     [Comment("菜单权限关联表")]
     [Serializable, ProtoContract]
-    [Index("idx_menu_permission_menu_id", nameof(MenuId))]
-    [Index("idx_menu_permission_version", nameof(Version))]
-    [Index("idx_menu_permission_create_time", nameof(CreateTime))]
-    [Index("idx_menu_permission_permission_id", nameof(PermissionId))]
+    [Table("power_menu_permission")]
+    [Index("idx_power_menu_permission_menu_id", nameof(MenuId))]
+    [Index("idx_power_menu_permission_version", nameof(Version))]
+    [Index("idx_power_menu_permission_create_time", nameof(CreateTime))]
+    [Index("idx_power_menu_permission_permission_id", nameof(PermissionId))]
     public class MenuPermission : ITable
     {
         /// <summary>

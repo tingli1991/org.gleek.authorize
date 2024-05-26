@@ -12,11 +12,11 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// 操作表
     /// </summary>
     [Comment("操作表")]
-    [Table("operation")]
+    [Table("power_operation")]
     [Serializable, ProtoContract]
-    [Index("idx_operation_code", nameof(Code))]
-    [Index("idx_operation_version", nameof(Version))]
-    [Index("idx_operation_create_time", nameof(CreateTime))]
+    [Index("idx_power_operation_code", nameof(Code))]
+    [Index("idx_power_operation_version", nameof(Version))]
+    [Index("idx_power_operation_create_time", nameof(CreateTime))]
     public class Operation : ITable
     {
         /// <summary>

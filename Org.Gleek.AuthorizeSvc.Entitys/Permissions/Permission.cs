@@ -12,10 +12,10 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// 权限表
     /// </summary>
     [Comment("权限表")]
-    [Table("permission")]
+    [Table("power_permission")]
     [Serializable, ProtoContract]
-    [Index("idx_permission_version", nameof(Version))]
-    [Index("idx_permission_create_time", nameof(CreateTime))]
+    [Index("idx_power_permission_version", nameof(Version))]
+    [Index("idx_power_permission_create_time", nameof(CreateTime))]
     public class Permission : ITable
     {
         /// <summary>

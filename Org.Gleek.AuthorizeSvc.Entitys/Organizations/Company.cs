@@ -9,41 +9,50 @@ using System.Text.Json.Serialization;
 namespace Org.Gleek.AuthorizeSvc.Entitys
 {
     /// <summary>
-    /// 用户组
+    /// 公司信息表
     /// </summary>
-    [Comment("用户组")]
-    [Table("power_user_group")]
+    [Table("org_company")]
+    [Comment("公司信息表")]
     [Serializable, ProtoContract]
-    [Index("idx_power_user_group_version", nameof(Version))]
-    [Index("idx_power_user_group_parent_id", nameof(ParentId))]
-    [Index("idx_power_user_group_create_time", nameof(CreateTime))]
-    [Index("idx_power_user_group_parent_path", nameof(ParentPath))]
-    public class UserGroup : ITable
+    [Index("idx_org_company_version", nameof(Version))]
+    [Index("idx_org_company_parent_id", nameof(ParentId))]
+    [Index("idx_org_company_parent_path", nameof(ParentPath))]
+    [Index("idx_org_company_create_time", nameof(CreateTime))]
+    public class Company : ITable
     {
         /// <summary>
         /// 主键
         /// </summary>
         [Key]
         [Column("id")]
-        [ProtoMember(1)]
         [Comment("主键")]
+        [ProtoMember(1)]
         [JsonProperty("id"), JsonPropertyName("id")]
         public long Id { get; set; }
 
         /// <summary>
         /// 名称
         /// </summary>
+        [MaxLength(80)]
         [ProtoMember(2)]
-        [MaxLength(255)]
-        [Column("name")]
         [Comment("名称")]
+        [Column("name")]
         [JsonProperty("name"), JsonPropertyName("name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// 状态
+        /// </summary>
+        [Comment("状态")]
+        [ProtoMember(3)]
+        [Column("status")]
+        [JsonProperty("status"), JsonPropertyName("status")]
+        public EnableStatus Status { get; set; }
+
+        /// <summary>
         /// 父级
         /// </summary>
-        [ProtoMember(3)]
+        [ProtoMember(4)]
         [Comment("父级")]
         [Column("parent_id")]
         [JsonProperty("parent_id"), JsonPropertyName("parent_id")]
@@ -52,21 +61,12 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 父级路径
         /// </summary>
-        [ProtoMember(4)]
+        [ProtoMember(5)]
         [MaxLength(500)]
         [Comment("父级路径")]
         [Column("parent_path")]
         [JsonProperty("parent_path"), JsonPropertyName("parent_path")]
         public string ParentPath { get; set; }
-
-        /// <summary>
-        /// 状态
-        /// </summary>
-        [ProtoMember(5)]
-        [Comment("状态")]
-        [Column("status")]
-        [JsonProperty("status"), JsonPropertyName("status")]
-        public EnableStatus Status { get; set; }
 
         /// <summary>
         /// 是否删除
@@ -108,18 +108,28 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 透传字段
         /// </summary>
-        [MaxLength(500)]
         [ProtoMember(10)]
+        [MaxLength(500)]
         [Column("extend")]
         [Comment("透传字段")]
         [JsonProperty("extend"), JsonPropertyName("extend")]
         public string Extend { get; set; }
 
         /// <summary>
+        /// 描述
+        /// </summary>
+        [ProtoMember(11)]
+        [MaxLength(500)]
+        [Comment("描述")]
+        [Column("description")]
+        [JsonProperty("description"), JsonPropertyName("description")]
+        public string Description { get; set; }
+
+        /// <summary>
         /// 备注
         /// </summary>
         [MaxLength(500)]
-        [ProtoMember(11)]
+        [ProtoMember(12)]
         [Comment("备注")]
         [Column("remark")]
         [JsonProperty("remark"), JsonPropertyName("remark")]

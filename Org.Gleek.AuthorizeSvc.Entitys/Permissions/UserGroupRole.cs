@@ -11,13 +11,13 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// <summary>
     /// 用户组角色关联表
     /// </summary>
-    [Table("user_group_role")]
     [Comment("用户组角色关联表")]
     [Serializable, ProtoContract]
-    [Index("idx_user_group_role_role_id", nameof(RoleId))]
-    [Index("idx_user_group_role_version", nameof(Version))]
-    [Index("idx_user_group_role_create_time", nameof(CreateTime))]
-    [Index("idx_user_group_role_user_group_id", nameof(UserGroupId))]
+    [Table("power_user_group_role")]
+    [Index("idx_power_user_group_role_role_id", nameof(RoleId))]
+    [Index("idx_power_user_group_role_version", nameof(Version))]
+    [Index("idx_power_user_group_role_create_time", nameof(CreateTime))]
+    [Index("idx_power_user_group_role_user_group_id", nameof(UserGroupId))]
     public class UserGroupRole : ITable
     {
         /// <summary>

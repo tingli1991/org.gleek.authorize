@@ -13,11 +13,11 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// </summary>
     [Comment("权限操作关联表")]
     [Serializable, ProtoContract]
-    [Table("permission_operation")]
-    [Index("idx_permission_operation_version", nameof(Version))]
-    [Index("idx_permission_operation_create_time", nameof(CreateTime))]
-    [Index("idx_permission_operation_operation_id", nameof(OperationId))]
-    [Index("idx_permission_operation_permission_id", nameof(PermissionId))]
+    [Table("power_permission_operation")]
+    [Index("idx_power_permission_operation_version", nameof(Version))]
+    [Index("idx_power_permission_operation_create_time", nameof(CreateTime))]
+    [Index("idx_power_permission_operation_operation_id", nameof(OperationId))]
+    [Index("idx_power_permission_operation_permission_id", nameof(PermissionId))]
     public class PermissionOperation : ITable
     {
         /// <summary>

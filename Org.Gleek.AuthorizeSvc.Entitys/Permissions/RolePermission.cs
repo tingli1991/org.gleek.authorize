@@ -11,13 +11,13 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// <summary>
     /// 角色权限关联表
     /// </summary>
-    [Table("role_permission")]
+    [Table("power_role_permission")]
     [Comment("角色权限关联表")]
     [Serializable, ProtoContract]
-    [Index("idx_role_permission_role_id", nameof(RoleId))]
-    [Index("idx_role_permission_version", nameof(Version))]
-    [Index("idx_role_permission_create_time", nameof(CreateTime))]
-    [Index("idx_role_permission_permission_id", nameof(PermissionId))]
+    [Index("idx_power_role_permission_role_id", nameof(RoleId))]
+    [Index("idx_power_role_permission_version", nameof(Version))]
+    [Index("idx_power_role_permission_create_time", nameof(CreateTime))]
+    [Index("idx_power_role_permission_permission_id", nameof(PermissionId))]
     public class RolePermission : ITable
     {
         /// <summary>

@@ -9,61 +9,51 @@ using System.Text.Json.Serialization;
 namespace Org.Gleek.AuthorizeSvc.Entitys
 {
     /// <summary>
-    /// 用户组
+    /// 职位信息表
     /// </summary>
-    [Comment("用户组")]
-    [Table("power_user_group")]
+    [Comment("职位信息表")]
+    [Table("org_position")]
     [Serializable, ProtoContract]
-    [Index("idx_power_user_group_version", nameof(Version))]
-    [Index("idx_power_user_group_parent_id", nameof(ParentId))]
-    [Index("idx_power_user_group_create_time", nameof(CreateTime))]
-    [Index("idx_power_user_group_parent_path", nameof(ParentPath))]
-    public class UserGroup : ITable
+    [Index("idx_org_position_code", nameof(Code))]
+    [Index("idx_org_position_version", nameof(Version))]
+    [Index("idx_org_position_create_time", nameof(CreateTime))]
+    public class Position : ITable
     {
         /// <summary>
         /// 主键
         /// </summary>
         [Key]
         [Column("id")]
-        [ProtoMember(1)]
         [Comment("主键")]
+        [ProtoMember(1)]
         [JsonProperty("id"), JsonPropertyName("id")]
         public long Id { get; set; }
 
         /// <summary>
-        /// 名称
+        /// 编码
         /// </summary>
+        [MaxLength(80)]
         [ProtoMember(2)]
-        [MaxLength(255)]
+        [Column("code")]
+        [Comment("编码")]
+        [JsonProperty("code"), JsonPropertyName("code")]
+        public string Code { get; set; }
+
+        /// <summary>
+        /// 姓名
+        /// </summary>
+        [MaxLength(80)]
+        [ProtoMember(3)]
+        [Comment("姓名")]
         [Column("name")]
-        [Comment("名称")]
         [JsonProperty("name"), JsonPropertyName("name")]
         public string Name { get; set; }
 
         /// <summary>
-        /// 父级
-        /// </summary>
-        [ProtoMember(3)]
-        [Comment("父级")]
-        [Column("parent_id")]
-        [JsonProperty("parent_id"), JsonPropertyName("parent_id")]
-        public long ParentId { get; set; }
-
-        /// <summary>
-        /// 父级路径
-        /// </summary>
-        [ProtoMember(4)]
-        [MaxLength(500)]
-        [Comment("父级路径")]
-        [Column("parent_path")]
-        [JsonProperty("parent_path"), JsonPropertyName("parent_path")]
-        public string ParentPath { get; set; }
-
-        /// <summary>
         /// 状态
         /// </summary>
-        [ProtoMember(5)]
         [Comment("状态")]
+        [ProtoMember(4)]
         [Column("status")]
         [JsonProperty("status"), JsonPropertyName("status")]
         public EnableStatus Status { get; set; }
@@ -71,7 +61,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 是否删除
         /// </summary>
-        [ProtoMember(6)]
+        [ProtoMember(5)]
         [Comment("是否删除")]
         [Column("id_deleted")]
         [JsonProperty("id_deleted"), JsonPropertyName("id_deleted")]
@@ -80,7 +70,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 更新时间
         /// </summary>
-        [ProtoMember(7)]
+        [ProtoMember(6)]
         [Comment("更新时间")]
         [Column("update_time")]
         [JsonProperty("update_time"), JsonPropertyName("update_time")]
@@ -89,7 +79,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 创建时间
         /// </summary>
-        [ProtoMember(8)]
+        [ProtoMember(7)]
         [Comment("创建时间")]
         [Column("create_time")]
         [JsonProperty("create_time"), JsonPropertyName("create_time")]
@@ -98,7 +88,7 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 版本号
         /// </summary>
-        [ProtoMember(9)]
+        [ProtoMember(8)]
         [Column("version")]
         [Comment("版本号")]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
@@ -108,12 +98,22 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
         /// <summary>
         /// 透传字段
         /// </summary>
+        [ProtoMember(9)]
         [MaxLength(500)]
-        [ProtoMember(10)]
         [Column("extend")]
         [Comment("透传字段")]
         [JsonProperty("extend"), JsonPropertyName("extend")]
         public string Extend { get; set; }
+
+        /// <summary>
+        /// 描述
+        /// </summary>
+        [ProtoMember(10)]
+        [MaxLength(500)]
+        [Comment("描述")]
+        [Column("description")]
+        [JsonProperty("description"), JsonPropertyName("description")]
+        public string Description { get; set; }
 
         /// <summary>
         /// 备注

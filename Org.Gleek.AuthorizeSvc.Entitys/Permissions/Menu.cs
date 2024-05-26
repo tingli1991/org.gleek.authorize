@@ -2,7 +2,6 @@
 using Com.GleekFramework.MigrationSdk;
 using Newtonsoft.Json;
 using ProtoBuf;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -12,13 +11,13 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// <summary>
     /// 菜单表
     /// </summary>
-    [Table("menu")]
     [Comment("菜单表")]
+    [Table("power_menu")]
     [Serializable, ProtoContract]
-    [Index("idx_menu_version", nameof(Version))]
-    [Index("idx_menu_parent_id", nameof(ParentId))]
-    [Index("idx_menu_parent_path", nameof(ParentPath))]
-    [Index("idx_menu_create_time", nameof(CreateTime))]
+    [Index("idx_power_menu_version", nameof(Version))]
+    [Index("idx_power_menu_parent_id", nameof(ParentId))]
+    [Index("idx_power_menu_parent_path", nameof(ParentPath))]
+    [Index("idx_power_menu_create_time", nameof(CreateTime))]
     public class Menu : ITable
     {
         /// <summary>

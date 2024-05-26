@@ -11,11 +11,11 @@ namespace Org.Gleek.AuthorizeSvc.Entitys
     /// <summary>
     /// 角色表
     /// </summary>
-    [Table("role")]
     [Comment("角色表")]
+    [Table("power_role")]
     [Serializable, ProtoContract]
-    [Index("idx_role_version", nameof(Version))]
-    [Index("idx_role_create_time", nameof(CreateTime))]
+    [Index("idx_power_role_version", nameof(Version))]
+    [Index("idx_power_role_create_time", nameof(CreateTime))]
     public class Role : ITable
     {
         /// <summary>
